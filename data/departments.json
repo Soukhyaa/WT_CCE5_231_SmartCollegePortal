@@ -1,0 +1,54 @@
+[
+  {
+    "id": "ce",
+    "name": "Computer Engineering",
+    "badge": "UG \u2022 PG",
+    "description": "Focuses on the theoretical foundations of computation, algorithms, software engineering principles, distributed systems, and computer network architecture.",
+    "focusAreas": [
+      "Data Structures",
+      "Operating Systems",
+      "Software Engineering",
+      "Cloud Computing"
+    ],
+    "featured": false
+  },
+  {
+    "id": "it",
+    "name": "Information Technology",
+    "badge": "UG Program",
+    "description": "Emphasises information systems, enterprise application development, web technologies, database administration, and modern cybersecurity strategies.",
+    "focusAreas": [
+      "Web Technologies",
+      "Database Management",
+      "Network Security",
+      "Full-Stack Development"
+    ],
+    "featured": false
+  },
+  {
+    "id": "aids",
+    "name": "Artificial Intelligence & Data Science",
+    "badge": "Emerging Tech",
+    "description": "Dedicated to computational intelligence, mathematical modelling, statistical analysis, machine learning algorithms, and deep neural network frameworks for large-scale data analytics.",
+    "focusAreas": [
+      "Machine Learning",
+      "Deep Learning",
+      "Big Data Analytics",
+      "Natural Language Processing"
+    ],
+    "featured": true
+  },
+  {
+    "id": "extc",
+    "name": "Electronics & Telecommunication",
+    "badge": "UG \u2022 PG",
+    "description": "Covers semiconductor devices, embedded systems, microcontrollers, digital signal processing, VLSI design, wireless communication, and IoT architectures.",
+    "focusAreas": [
+      "Embedded Systems",
+      "VLSI Design",
+      "Digital Signal Processing",
+      "IoT & Wireless Systems"
+    ],
+    "featured": false
+  }
+]

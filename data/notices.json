@@ -1,0 +1,42 @@
+[
+  {
+    "id": "notice-1",
+    "title": "Semester Commencement & Academic Schedule",
+    "category": "Academic",
+    "categoryClass": "category-academic",
+    "date": "Nov 12, 2026",
+    "dateTime": "2026-11-12",
+    "description": "Sample circular outlining the tentative schedule for instructional weeks, mid-term academic performance reviews, and laboratory continuous assessment deadlines.",
+    "demo": true
+  },
+  {
+    "id": "notice-2",
+    "title": "SPPU In-Semester Exam Form Verification",
+    "category": "Examination",
+    "categoryClass": "category-exam",
+    "date": "Nov 08, 2026",
+    "dateTime": "2026-11-08",
+    "description": "Sample notification regarding student exam eligibility verification, hall ticket distribution schedules, and university assessment protocols.",
+    "demo": true
+  },
+  {
+    "id": "notice-3",
+    "title": "Annual Engineering Project Expo & Hackathon",
+    "category": "Event",
+    "categoryClass": "category-event",
+    "date": "Oct 30, 2026",
+    "dateTime": "2026-10-30",
+    "description": "Sample circular inviting student teams to register for the annual inter-collegiate technical exhibition, hardware displays, and coding competitions.",
+    "demo": true
+  },
+  {
+    "id": "notice-4",
+    "title": "Campus Library & Digital Journal Access",
+    "category": "General",
+    "categoryClass": "category-general",
+    "date": "Oct 22, 2026",
+    "dateTime": "2026-10-22",
+    "description": "Sample notice detailing updated central reading hall timings and student procedures for accessing IEEE, ACM, and digital scientific journal portals.",
+    "demo": true
+  }
+]

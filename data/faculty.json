@@ -1,0 +1,146 @@
+[
+  {
+    "id": "ce-fac-1",
+    "name": "Dr. Sunita R. Joshi",
+    "designation": "Professor & Head of Department",
+    "qualification": "Ph.D. in Computer Engineering, M.E.",
+    "experience": "18 Years",
+    "department": "Computer Engineering",
+    "description": "Specializes in distributed algorithms, cloud computing architecture, and high-performance computing systems. Guides undergraduate capstone projects."
+  },
+  {
+    "id": "ce-fac-2",
+    "name": "Prof. Amit V. Kulkarni",
+    "designation": "Associate Professor",
+    "qualification": "M.Tech in Computer Science & Engineering",
+    "experience": "13 Years",
+    "department": "Computer Engineering",
+    "description": "Focuses on database design, distributed SQL systems, operating system internals, and open-source software development methodologies."
+  },
+  {
+    "id": "ce-fac-3",
+    "name": "Dr. Manoj P. Patil",
+    "designation": "Associate Professor",
+    "qualification": "Ph.D. in Software Engineering, M.E.",
+    "experience": "11 Years",
+    "department": "Computer Engineering",
+    "description": "Conducts research in software quality assurance, automated unit testing, object-oriented design patterns, and compiler design."
+  },
+  {
+    "id": "ce-fac-4",
+    "name": "Prof. Neha S. Shinde",
+    "designation": "Assistant Professor",
+    "qualification": "M.E. in Computer Engineering",
+    "experience": "7 Years",
+    "department": "Computer Engineering",
+    "description": "Mentors students in data structures, algorithms complexity analysis, and competitive programming clinics."
+  },
+  {
+    "id": "it-fac-1",
+    "name": "Dr. Rajesh K. Deshmukh",
+    "designation": "Professor & Head of Department",
+    "qualification": "Ph.D. in Information Technology, M.Tech",
+    "experience": "19 Years",
+    "department": "Information Technology",
+    "description": "Leads research in enterprise web architectures, service-oriented systems, and cloud-native application deployment pipelines."
+  },
+  {
+    "id": "it-fac-2",
+    "name": "Prof. Priya M. Bansode",
+    "designation": "Associate Professor",
+    "qualification": "M.Tech in Information Technology",
+    "experience": "12 Years",
+    "department": "Information Technology",
+    "description": "Expert in applied cybersecurity, web application penetration testing, network cryptography, and identity management protocols."
+  },
+  {
+    "id": "it-fac-3",
+    "name": "Prof. Nitin B. More",
+    "designation": "Assistant Professor",
+    "qualification": "M.E. in Computer Networks & IT",
+    "experience": "8 Years",
+    "department": "Information Technology",
+    "description": "Instructs full-stack development, modern JavaScript frameworks, RESTful API design, and cloud database optimization."
+  },
+  {
+    "id": "it-fac-4",
+    "name": "Prof. Snehal A. Gaikwad",
+    "designation": "Assistant Professor",
+    "qualification": "M.Tech in Software Engineering",
+    "experience": "6 Years",
+    "department": "Information Technology",
+    "description": "Guides practical laboratory work in database administration, enterprise ERP systems, and containerized deployment."
+  },
+  {
+    "id": "aids-fac-1",
+    "name": "Dr. Vikram S. Sawant",
+    "designation": "Professor & Head of Department",
+    "qualification": "Ph.D. in Artificial Intelligence, M.Tech",
+    "experience": "16 Years",
+    "department": "Artificial Intelligence and Data Science",
+    "description": "Specializes in deep neural network architectures, probabilistic graphical models, and computer vision systems for industrial robotics."
+  },
+  {
+    "id": "aids-fac-2",
+    "name": "Dr. Ananya P. Kadam",
+    "designation": "Associate Professor",
+    "qualification": "Ph.D. in Machine Learning, M.E.",
+    "experience": "10 Years",
+    "department": "Artificial Intelligence and Data Science",
+    "description": "Focuses on natural language processing, large language model fine-tuning, transformer attention models, and conversational AI agents."
+  },
+  {
+    "id": "aids-fac-3",
+    "name": "Prof. Chetan D. Pawar",
+    "designation": "Assistant Professor",
+    "qualification": "M.Tech in Data Science & AI",
+    "experience": "7 Years",
+    "department": "Artificial Intelligence and Data Science",
+    "description": "Mentors students in big data processing pipelines, distributed Spark computing, and feature engineering for predictive analytics."
+  },
+  {
+    "id": "aids-fac-4",
+    "name": "Prof. Pooja R. Jagtap",
+    "designation": "Assistant Professor",
+    "qualification": "M.Tech in Computer Science & AI",
+    "experience": "5 Years",
+    "department": "Artificial Intelligence and Data Science",
+    "description": "Conducts hands-on machine learning laboratory clinics with Python, PyTorch, scikit-learn, and model interpretability frameworks."
+  },
+  {
+    "id": "entc-fac-1",
+    "name": "Dr. Sanjay T. Jadhav",
+    "designation": "Professor & Head of Department",
+    "qualification": "Ph.D. in VLSI & Microelectronics, M.E.",
+    "experience": "20 Years",
+    "department": "Electronics and Telecommunication",
+    "description": "Leads advanced research in VLSI circuit synthesis, semiconductor device physics, and low-power ASIC design architectures."
+  },
+  {
+    "id": "entc-fac-2",
+    "name": "Dr. Kavita N. Mahajan",
+    "designation": "Associate Professor",
+    "qualification": "Ph.D. in Wireless Communication, M.Tech",
+    "experience": "14 Years",
+    "department": "Electronics and Telecommunication",
+    "description": "Specializes in 5G wireless network protocols, digital signal processing algorithms, RF transceiver design, and MIMO channel estimation."
+  },
+  {
+    "id": "entc-fac-3",
+    "name": "Prof. Rahul H. Chavan",
+    "designation": "Assistant Professor",
+    "qualification": "M.E. in Embedded Systems",
+    "experience": "9 Years",
+    "department": "Electronics and Telecommunication",
+    "description": "Instructs embedded microcontrollers, RTOS firmware development, ARM architecture, and IoT sensor interface protocols."
+  },
+  {
+    "id": "entc-fac-4",
+    "name": "Prof. Swati V. Thorat",
+    "designation": "Assistant Professor",
+    "qualification": "M.Tech in Electronics Design",
+    "experience": "6 Years",
+    "department": "Electronics and Telecommunication",
+    "description": "Mentors student hardware projects in PCB layout design, FPGA digital logic synthesis, and automated test instrumentation."
+  }
+]

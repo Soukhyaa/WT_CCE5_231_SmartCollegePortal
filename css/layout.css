@@ -1,0 +1,2567 @@
+/**
+ * layout.css - Header, Sticky Navigation, Main App View Container & Footer
+ * Web Technology CCE-5: Smart College Website Portal
+ * D. Y. Patil College of Engineering, Akurdi, Pune
+ * Theme: Burgundy & Warm Ivory Palette
+ */
+
+/* ==========================================================================
+   Section Scroll Offset (Prevents Sticky Header from Covering Headings)
+   ========================================================================== */
+section[id] {
+  scroll-margin-top: calc(var(--header-height) + 1.5rem);
+}
+
+/* ==========================================================================
+   Top Notification / Affiliation Bar
+   ========================================================================== */
+.top-bar {
+  background-color: var(--color-burgundy-deep);
+  color: var(--color-warm-ivory);
+  font-size: var(--font-size-xs);
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.top-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.top-bar-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.top-bar-badge {
+  background-color: var(--color-antique-gold);
+  color: var(--color-burgundy-deep);
+  font-weight: var(--font-weight-bold);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+
+.top-bar-location {
+  opacity: 0.9;
+}
+
+.top-bar-contact {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.top-bar-contact a {
+  color: var(--color-warm-ivory);
+  opacity: 0.9;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.top-bar-contact a:hover {
+  color: var(--color-antique-gold);
+}
+
+/* ==========================================================================
+   Main Header & Sticky Navigation
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--color-burgundy);
+  border-bottom: 1px solid var(--color-burgundy-dark);
+  box-shadow: 0 2px 10px rgba(46, 22, 29, 0.15);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+}
+
+/* College Brand Identity */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-decoration: none;
+}
+
+.brand-crest {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--color-burgundy-dark), var(--color-burgundy-deep));
+  color: var(--color-warm-ivory);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.05em;
+  border: 2px solid var(--color-antique-gold);
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  line-height: 1.2;
+}
+
+.brand-subtext {
+  font-size: var(--font-size-xs);
+  color: var(--color-dusty-rose);
+  letter-spacing: 0.03em;
+}
+
+/* Desktop Navigation Menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: var(--spacing-xs);
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 8px 14px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-warm-ivory);
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--color-white);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.nav-link.active,
+.nav-link[aria-current="page"] {
+  color: var(--color-burgundy-deep);
+  background-color: var(--color-antique-gold);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Highlighted CTA Nav Link (Student Enquiry) */
+.nav-link-cta {
+  background-color: var(--color-antique-gold);
+  color: var(--color-burgundy-deep);
+  font-weight: var(--font-weight-semibold);
+  margin-left: var(--spacing-xs);
+  border: 1px solid var(--color-antique-gold-hover);
+}
+
+.nav-link-cta:hover {
+  background-color: var(--color-antique-gold-hover);
+  color: var(--color-burgundy-deep);
+}
+
+.nav-link-cta.active,
+.nav-link-cta[aria-current="page"] {
+  background-color: var(--color-white);
+  color: var(--color-burgundy);
+  border-color: var(--color-white);
+}
+
+/* ==========================================================================
+   Dropdown Navigation Menu (Desktop & Shared Base)
+   ========================================================================== */
+.nav-item-has-dropdown {
+  position: relative;
+}
+
+.nav-link-dropdown-wrap {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-pill);
+  transition: background-color var(--transition-fast);
+}
+
+.nav-link-dropdown-wrap:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.nav-link-dropdown-wrap .nav-link {
+  padding-right: 4px;
+}
+
+.dropdown-toggle-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-warm-ivory);
+  padding: 8px 10px 8px 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  line-height: 1;
+  border-radius: 0 var(--radius-pill) var(--radius-pill) 0;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.dropdown-toggle-btn:hover {
+  color: var(--color-antique-gold);
+}
+
+.nav-link.active + .dropdown-toggle-btn,
+.nav-link[aria-current="page"] + .dropdown-toggle-btn {
+  color: var(--color-burgundy-deep);
+}
+
+.dropdown-chevron {
+  display: inline-block;
+  transition: transform var(--transition-fast);
+  transform-origin: center;
+}
+
+/* Rotate chevron when dropdown is active */
+.nav-item-has-dropdown.is-dropdown-open .dropdown-chevron,
+.nav-item-has-dropdown:hover .dropdown-chevron {
+  transform: rotate(180deg);
+}
+
+/* Desktop Dropdown Flyout */
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 250px;
+  background-color: var(--color-burgundy-dark);
+  border: 1px solid rgba(212, 163, 115, 0.35);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs) 0;
+  list-style: none;
+  box-shadow: 0 12px 28px rgba(30, 10, 18, 0.35);
+  z-index: 1050;
+}
+
+@media (min-width: 821px) {
+  .nav-item-has-dropdown:hover > .nav-dropdown,
+  .nav-item-has-dropdown.is-dropdown-open > .nav-dropdown {
+    display: block;
+    animation: dropdownFade 0.18s ease-out;
+  }
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-link {
+  display: block;
+  padding: 9px 18px;
+  color: var(--color-warm-ivory);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  transition: background-color var(--transition-fast), color var(--transition-fast), padding-left var(--transition-fast);
+  white-space: nowrap;
+}
+
+.dropdown-link:hover,
+.dropdown-link:focus {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--color-antique-gold);
+  padding-left: 22px;
+}
+
+.dropdown-link.active,
+.dropdown-link[aria-current="page"] {
+  background-color: var(--color-antique-gold);
+  color: var(--color-burgundy-deep);
+  font-weight: var(--font-weight-semibold);
+}
+
+.dropdown-divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+  margin: 6px 0;
+}
+
+.dropdown-view-more {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-antique-gold);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 4px;
+}
+
+.dropdown-view-more:hover {
+  color: var(--color-white);
+  background-color: rgba(212, 163, 115, 0.2);
+}
+
+/* Mobile Toggle Button */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  background-color: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+}
+
+.nav-toggle-bar {
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-warm-ivory);
+  border-radius: 2px;
+  transition: all var(--transition-normal);
+  margin: 2px 0;
+}
+
+/* ==========================================================================
+   Main Portal Container & Page Views (Single Page Application View Switching)
+   ========================================================================== */
+#app-view {
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+/* Hide all page views by default */
+.page-view {
+  display: none;
+}
+
+/* Display only the currently selected page view */
+.page-view.active {
+  display: block;
+  animation: fadeInView 0.22s ease-in-out;
+}
+
+@keyframes fadeInView {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   Button Components
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+/* Primary Button: Burgundy background with white text; Muted wine on hover */
+.btn-primary {
+  background-color: var(--color-burgundy);
+  color: var(--color-white);
+  border-color: var(--color-burgundy-dark);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-muted-wine);
+  color: var(--color-white);
+  border-color: var(--color-muted-wine);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Secondary Button: White/Ivory background with burgundy text & border */
+.btn-secondary {
+  background-color: var(--color-white);
+  color: var(--color-burgundy);
+  border: 1px solid var(--color-burgundy);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-warm-ivory);
+  color: var(--color-burgundy-dark);
+  border-color: var(--color-burgundy-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero-section {
+  padding: var(--spacing-3xl) 0;
+  background: linear-gradient(180deg, var(--color-white) 0%, var(--color-warm-ivory) 100%);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero-container {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+}
+
+.hero-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-3xl);
+  color: var(--color-burgundy);
+  margin-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+  letter-spacing: -0.02em;
+}
+
+.hero-location {
+  font-size: var(--font-size-md);
+  color: var(--color-muted-wine);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--spacing-md);
+}
+
+.hero-description {
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-xl);
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   About Preview Section (Homepage)
+   ========================================================================== */
+.about-preview-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-sm);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-preview-text {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xl);
+  text-align: left;
+}
+
+.about-preview-action {
+  text-align: center;
+}
+
+/* ==========================================================================
+   Departments Preview Section (Homepage)
+   ========================================================================== */
+.departments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.dept-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.dept-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-antique-gold);
+}
+
+.dept-card-featured {
+  border-color: var(--color-antique-gold);
+  background: linear-gradient(180deg, var(--color-white) 0%, var(--color-antique-gold-soft) 100%);
+}
+
+.dept-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.dept-icon-badge {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-dusty-rose-soft);
+  color: var(--color-burgundy);
+  border: 1px solid var(--color-dusty-rose);
+}
+
+.dept-badge-featured {
+  background-color: var(--color-antique-gold);
+  color: var(--color-burgundy-deep);
+  border-color: var(--color-antique-gold);
+}
+
+.dept-type-badge {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.dept-card-title {
+  font-size: var(--font-size-lg);
+  color: var(--color-burgundy);
+  margin-bottom: var(--spacing-sm);
+}
+
+.dept-card-desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-base);
+  margin-bottom: var(--spacing-lg);
+  flex-grow: 1;
+}
+
+.dept-link {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-burgundy);
+  transition: color var(--transition-fast);
+}
+
+.dept-link:hover {
+  color: var(--color-muted-wine);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Admission CTA Section
+   ========================================================================== */
+.admission-cta-card {
+  background: linear-gradient(135deg, var(--color-burgundy-dark) 0%, var(--color-burgundy) 100%);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl) var(--spacing-xl);
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.admission-cta-card .section-badge {
+  background-color: var(--color-antique-gold);
+  color: var(--color-burgundy-deep);
+  border-color: var(--color-antique-gold);
+}
+
+.admission-cta-title {
+  color: var(--color-white);
+  font-size: var(--font-size-2xl);
+  margin: var(--spacing-sm) 0;
+}
+
+.admission-cta-desc {
+  color: rgba(247, 243, 239, 0.9);
+  max-width: 720px;
+  margin: 0 auto var(--spacing-xl) auto;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+}
+
+.admission-cta-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Specific button styles inside the dark admission banner */
+.admission-cta-actions .btn-primary {
+  background-color: var(--color-antique-gold);
+  color: var(--color-burgundy-deep);
+  border-color: var(--color-antique-gold-hover);
+}
+
+.admission-cta-actions .btn-primary:hover {
+  background-color: var(--color-antique-gold-hover);
+  color: var(--color-burgundy-deep);
+}
+
+.admission-cta-actions .btn-secondary {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: var(--color-warm-ivory);
+}
+
+.admission-cta-actions .btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-white);
+}
+
+/* ==========================================================================
+   Announcements / Notice Preview Section
+   ========================================================================== */
+.notices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.notice-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.notice-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-antique-gold);
+}
+
+.notice-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+}
+
+.notice-sample-tag {
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: var(--color-dusty-rose-soft);
+  color: var(--color-burgundy);
+  border: 1px solid var(--color-dusty-rose);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.notice-date {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.notice-card-title {
+  font-size: var(--font-size-md);
+  color: var(--color-burgundy);
+  margin-bottom: var(--spacing-xs);
+}
+
+.notice-card-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-base);
+  margin-bottom: var(--spacing-md);
+  flex-grow: 1;
+}
+
+.notice-category {
+  font-size: var(--font-size-xs);
+  color: var(--color-burgundy);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ==========================================================================
+   Full About Section Styles
+   ========================================================================== */
+.about-section {
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.about-intro-box {
+  background-color: var(--color-warm-ivory);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+}
+
+.about-intro-box strong {
+  color: var(--color-burgundy);
+}
+
+.about-subsections-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+}
+
+.about-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.about-card-badge {
+  display: inline-block;
+  align-self: flex-start;
+  background-color: var(--color-dusty-rose-soft);
+  color: var(--color-burgundy);
+  border: 1px solid var(--color-dusty-rose);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.about-card-title {
+  color: var(--color-burgundy);
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-md);
+}
+
+.about-card-text {
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-md);
+}
+
+.about-feature-list {
+  list-style: none;
+  margin-top: auto;
+}
+
+.about-feature-list li {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  padding: 6px 0;
+  border-top: 1px solid var(--color-border-subtle);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.about-feature-list li::before {
+  content: "✓";
+  color: var(--color-antique-gold);
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   Full Departments Section Styles (CSS Grid)
+   ========================================================================== */
+.departments-section {
+  background-color: var(--color-warm-ivory);
+}
+
+.departments-main-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+}
+
+.dept-full-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.dept-full-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-antique-gold);
+}
+
+.dept-card-visual {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-md);
+}
+
+.dept-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-dusty-rose-soft);
+  color: var(--color-burgundy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  border: 1px solid var(--color-dusty-rose);
+}
+
+.dept-full-card.featured .dept-icon-circle {
+  background-color: var(--color-antique-gold-soft);
+  color: var(--color-burgundy);
+  border-color: var(--color-antique-gold);
+}
+
+.dept-full-title {
+  font-size: var(--font-size-xl);
+  color: var(--color-burgundy);
+  margin-bottom: var(--spacing-sm);
+}
+
+.dept-full-desc {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-lg);
+}
+
+.dept-focus-areas {
+  background-color: var(--color-warm-ivory);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-top: auto;
+  border: 1px solid var(--color-border-subtle);
+}
+
+.dept-focus-label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-burgundy);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: var(--spacing-xs);
+}
+
+.dept-focus-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.dept-tag {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  color: var(--color-espresso-text);
+  font-size: var(--font-size-xs);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+}
+
+/* ==========================================================================
+   Full Courses Section Styles (CSS Grid)
+   ========================================================================== */
+.courses-section {
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+.course-card {
+  background-color: var(--color-warm-ivory-card);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-burgundy);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.course-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-antique-gold);
+}
+
+.course-card-featured {
+  border-top-color: var(--color-antique-gold);
+  background: linear-gradient(180deg, var(--color-white) 0%, var(--color-antique-gold-soft) 100%);
+}
+
+.course-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+}
+
+.course-level-badge {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  background-color: var(--color-white);
+  color: var(--color-burgundy);
+  border: 1px solid var(--color-border);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.course-badge-highlight {
+  background-color: var(--color-antique-gold);
+  color: var(--color-burgundy-deep);
+  border-color: var(--color-antique-gold);
+  font-weight: var(--font-weight-bold);
+}
+
+.course-code-badge {
+  font-size: 11px;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-muted-wine);
+  background-color: var(--color-warm-ivory);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.course-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xl);
+  color: var(--color-burgundy);
+  margin-bottom: var(--spacing-xs);
+  line-height: var(--line-height-tight);
+}
+
+.course-description {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Card Action Bar: View Details Button & Explore Link */
+.course-card-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  padding-top: var(--spacing-xs);
+}
+
+.course-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--color-burgundy);
+  color: var(--color-white);
+  border: 1px solid var(--color-burgundy);
+  padding: 8px 18px;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+}
+
+.course-toggle-btn:hover {
+  background-color: var(--color-muted-wine);
+  border-color: var(--color-muted-wine);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.course-toggle-btn:focus-visible {
+  outline: 2px solid var(--color-antique-gold);
+  outline-offset: 2px;
+}
+
+.course-toggle-btn .toggle-btn-icon {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.course-toggle-btn[aria-expanded="true"] .toggle-btn-icon {
+  transform: rotate(180deg);
+}
+
+.course-dept-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-burgundy);
+  text-decoration: none;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.course-dept-link:hover {
+  color: var(--color-muted-wine);
+  transform: translateX(3px);
+}
+
+/* Expandable Details Panel using CSS Grid Transition */
+.course-expandable-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, margin-top 0.35s ease;
+  margin-top: 0;
+}
+
+.course-expandable-panel.is-expanded {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  border-top: 1px dashed var(--color-border);
+}
+
+.course-details-content {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  min-height: 0;
+}
+
+/* Duration Bar */
+.duration-highlight {
+  background-color: var(--color-warm-ivory);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-antique-gold);
+  border-radius: var(--radius-md);
+  padding: 8px 14px;
+  font-size: var(--font-size-xs);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.duration-highlight .detail-label {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-burgundy-dark);
+}
+
+.duration-highlight .detail-value {
+  color: var(--color-espresso-text);
+}
+
+/* Detail Sub-groups */
+.course-detail-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.detail-group-title {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-burgundy);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* Detail bullet lists (Subjects & Skills) */
+.course-detail-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.course-detail-list li {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  position: relative;
+  padding-left: 14px;
+}
+
+.course-detail-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-antique-gold);
+  font-weight: bold;
+}
+
+/* Tag cloud for Core Areas of Study */
+.course-tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.course-tag {
+  font-size: 11px;
+  background-color: var(--color-white);
+  color: var(--color-espresso-text);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+/* Career tags */
+.career-cloud .career-tag {
+  font-size: 11px;
+  font-weight: var(--font-weight-medium);
+  background-color: var(--color-dusty-rose-soft);
+  color: var(--color-burgundy-deep);
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-dusty-rose);
+}
+
+/* ==========================================================================
+   Full Faculty Section Styles (CSS Grid)
+   ========================================================================== */
+.faculty-section {
+  background-color: var(--color-warm-ivory);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faculty-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+}
+
+.faculty-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.faculty-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-antique-gold);
+}
+
+.faculty-card-featured {
+  border-color: var(--color-antique-gold);
+  background: linear-gradient(180deg, var(--color-white) 0%, var(--color-antique-gold-soft) 100%);
+}
+
+.faculty-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.faculty-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-dusty-rose-soft);
+  color: var(--color-burgundy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-dusty-rose);
+}
+
+.faculty-avatar-featured {
+  background-color: var(--color-antique-gold-soft);
+  color: var(--color-burgundy);
+  border-color: var(--color-antique-gold);
+}
+
+.faculty-badge {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  background-color: var(--color-dusty-rose-soft);
+  color: var(--color-burgundy);
+  border: 1px solid var(--color-dusty-rose);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.faculty-badge-highlight {
+  background-color: var(--color-antique-gold);
+  color: var(--color-burgundy-deep);
+  border-color: var(--color-antique-gold);
+}
+
+.faculty-dept-title {
+  font-size: var(--font-size-xl);
+  color: var(--color-burgundy);
+  margin-bottom: var(--spacing-xs);
+}
+
+.faculty-role {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-muted-wine);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-sm);
+}
+
+.faculty-desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-lg);
+  flex-grow: 1;
+}
+
+.faculty-meta {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.faculty-meta-item {
+  font-size: var(--font-size-xs);
+  background-color: var(--color-warm-ivory);
+  color: var(--color-espresso-text);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.faculty-dept-cta {
+  margin-top: var(--spacing-md);
+  align-self: flex-start;
+  font-size: var(--font-size-xs);
+  padding: 8px 16px;
+}
+
+/* Faculty Demonstration Data Disclaimer */
+.faculty-demo-disclaimer {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background-color: var(--color-warm-ivory);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-antique-gold);
+  border-radius: var(--radius-pill);
+  padding: 6px 16px;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  margin-top: var(--spacing-md);
+  box-shadow: 0 1px 3px rgba(84, 43, 54, 0.05);
+}
+
+.disclaimer-badge {
+  display: inline-block;
+  background-color: var(--color-antique-gold);
+  color: var(--color-burgundy-deep);
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+/* Department-wise Faculty Profiles Grid */
+.faculty-profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+/* Individual Faculty Profile Card */
+.faculty-profile-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-burgundy);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.faculty-profile-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-antique-gold);
+}
+
+.faculty-profile-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.faculty-avatar-initials {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, var(--color-burgundy) 0%, var(--color-muted-wine) 100%);
+  color: var(--color-warm-ivory);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  border: 2px solid var(--color-antique-gold);
+  box-shadow: 0 2px 4px rgba(84, 43, 54, 0.15);
+}
+
+.faculty-profile-header-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.faculty-profile-name {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-lg);
+  color: var(--color-burgundy);
+  margin: 0 0 4px 0;
+  line-height: var(--line-height-tight);
+}
+
+.faculty-profile-designation {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-muted-wine);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.faculty-profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: var(--spacing-md);
+  background-color: var(--color-warm-ivory-card);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.faculty-detail-row {
+  display: flex;
+  font-size: var(--font-size-xs);
+  line-height: 1.5;
+}
+
+.faculty-detail-label {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-burgundy-dark);
+  min-width: 95px;
+  flex-shrink: 0;
+}
+
+.faculty-detail-value {
+  color: var(--color-text-primary);
+  flex: 1;
+}
+
+.faculty-profile-desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-md);
+  flex-grow: 1;
+}
+
+.faculty-profile-footer {
+  margin-top: auto;
+  padding-top: var(--spacing-sm);
+  border-top: 1px dashed var(--color-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faculty-dept-badge {
+  font-size: 11px;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-muted-wine);
+  background-color: var(--color-warm-ivory);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.faculty-experience-pill {
+  font-size: 11px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-burgundy-deep);
+  background-color: var(--color-antique-gold-soft);
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-antique-gold);
+}
+
+/* ==========================================================================
+   Full Notices & Announcements Section Styles (CSS Grid)
+   ========================================================================== */
+.notices-section {
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.notice-disclaimer-box {
+  background-color: var(--color-warm-ivory);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-antique-gold);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.disclaimer-icon {
+  font-size: var(--font-size-lg);
+  color: var(--color-antique-gold);
+  font-weight: bold;
+}
+
+.notice-disclaimer-box strong {
+  color: var(--color-burgundy);
+}
+
+.notices-board-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+}
+
+.notice-board-card {
+  background-color: var(--color-warm-ivory-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.notice-board-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-antique-gold);
+}
+
+.notice-board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+}
+
+.notice-category-badge {
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.category-academic {
+  background-color: #EDE3E5;
+  color: var(--color-burgundy);
+  border: 1px solid #D9BFAF;
+}
+
+.category-exam {
+  background-color: #F8EFE4;
+  color: #8A5B20;
+  border: 1px solid var(--color-antique-gold);
+}
+
+.category-event {
+  background-color: #E8EFE8;
+  color: #375338;
+  border: 1px solid #B8CBB5;
+}
+
+.category-general {
+  background-color: #EAE6E4;
+  color: var(--color-espresso-text);
+  border: 1px solid var(--color-border);
+}
+
+.notice-board-date {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.notice-board-title {
+  font-size: var(--font-size-lg);
+  color: var(--color-burgundy);
+  margin-bottom: var(--spacing-sm);
+}
+
+.notice-board-desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-lg);
+  flex-grow: 1;
+}
+
+.notice-board-footer {
+  margin-top: auto;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-xs);
+}
+
+.notice-demo-tag {
+  font-size: 11px;
+  color: var(--color-muted-wine);
+  font-weight: var(--font-weight-medium);
+}
+
+.notice-read-more {
+  color: var(--color-burgundy);
+  font-weight: var(--font-weight-semibold);
+  transition: color var(--transition-fast);
+}
+
+.notice-board-card:hover .notice-read-more {
+  color: var(--color-muted-wine);
+}
+
+.notices-action-container {
+  text-align: center;
+  margin-top: var(--spacing-2xl);
+}
+
+/* ==========================================================================
+   Full Admissions Section Styles (CSS Grid)
+   ========================================================================== */
+.admissions-section {
+  background-color: var(--color-warm-ivory);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.admissions-notice-note {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-burgundy);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+.admissions-note-icon {
+  color: var(--color-burgundy);
+  font-weight: bold;
+  font-size: var(--font-size-lg);
+  line-height: 1;
+}
+
+.admissions-notice-note strong {
+  color: var(--color-burgundy);
+}
+
+.admission-journey-wrapper {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl);
+  margin-bottom: var(--spacing-2xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.journey-header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.journey-badge {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: var(--color-antique-gold-soft);
+  color: var(--color-burgundy);
+  border: 1px solid var(--color-antique-gold);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  display: inline-block;
+  margin-bottom: var(--spacing-xs);
+}
+
+.journey-title {
+  color: var(--color-burgundy);
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-xs);
+}
+
+.journey-subtitle {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+}
+
+.admission-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.admission-step-card {
+  background-color: var(--color-warm-ivory-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.admission-step-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-antique-gold);
+}
+
+.step-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.step-number {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-antique-gold);
+}
+
+.step-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-dusty-rose-soft);
+  color: var(--color-burgundy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-dusty-rose);
+}
+
+.step-title {
+  font-size: var(--font-size-md);
+  color: var(--color-burgundy);
+  margin-bottom: var(--spacing-xs);
+}
+
+.step-desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+.admissions-cta-banner {
+  background: linear-gradient(135deg, var(--color-burgundy-dark) 0%, var(--color-burgundy) 100%);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl) var(--spacing-2xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+.cta-banner-title {
+  color: var(--color-white);
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-xs);
+}
+
+.cta-banner-desc {
+  color: rgba(247, 243, 239, 0.9);
+  font-size: var(--font-size-sm);
+}
+
+.cta-banner-btn {
+  background-color: var(--color-antique-gold);
+  color: var(--color-burgundy-deep);
+  border-color: var(--color-antique-gold-hover);
+  padding: 12px 28px;
+  font-size: var(--font-size-base);
+  flex-shrink: 0;
+}
+
+.cta-banner-btn:hover {
+  background-color: var(--color-antique-gold-hover);
+  color: var(--color-burgundy-deep);
+}
+
+/* ==========================================================================
+   Full Student Enquiry Section Styles (Form Grid)
+   ========================================================================== */
+.enquiry-section {
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.enquiry-card-wrapper {
+  max-width: 820px;
+  margin: 0 auto;
+  background-color: var(--color-warm-ivory-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.form-group-full {
+  grid-column: 1 / -1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-burgundy);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.required-indicator {
+  color: var(--color-error);
+  font-weight: bold;
+  margin-left: 4px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 14px;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  color: var(--color-espresso-text);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
+}
+
+.form-control:focus {
+  border-color: var(--color-burgundy);
+  box-shadow: 0 0 0 3px rgba(84, 43, 54, 0.15);
+}
+
+.form-control:focus:invalid {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(158, 53, 53, 0.15);
+}
+
+select.form-control {
+  cursor: pointer;
+  appearance: auto;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: var(--line-height-relaxed);
+}
+
+.form-hint {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+.form-actions {
+  margin-top: var(--spacing-xl);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.form-submit-btn {
+  padding: 12px 32px;
+  font-size: var(--font-size-base);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+
+.form-message {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  flex-grow: 1;
+  min-height: 1.5rem; /* Reserve space so layout doesn't jump */
+}
+
+/* Success state — shown after a valid submission */
+.form-message--success {
+  color: var(--color-success);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  padding: 10px 14px;
+  background-color: #EBF5ED;
+  border: 1px solid var(--color-success);
+  border-radius: var(--radius-md);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Error state — shown when a validation check fails */
+.form-message--error {
+  color: var(--color-error);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  padding: 10px 14px;
+  background-color: #FCEAEA;
+  border: 1px solid var(--color-error);
+  border-radius: var(--radius-md);
+  line-height: var(--line-height-relaxed);
+}
+
+.form-privacy-note {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border-subtle);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-relaxed);
+}
+
+.form-privacy-note strong {
+  color: var(--color-burgundy);
+}
+
+.privacy-icon {
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   Submitted Enquiries Panel (localStorage display)
+   ========================================================================== */
+
+/* Outer wrapper — hidden by default; JS sets display:block when data exists */
+.submitted-enquiries-wrapper {
+  display: none; /* JavaScript will reveal this when enquiries exist */
+  margin-top: var(--spacing-3xl);
+  padding-top: var(--spacing-2xl);
+  border-top: 2px solid var(--color-border-subtle);
+}
+
+.submitted-enquiries-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-burgundy);
+  margin-bottom: var(--spacing-sm);
+}
+
+.submitted-enquiries-note {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-xl);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Container for all enquiry cards */
+.enquiry-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+/* Empty-state message when no data is saved */
+.enquiry-empty-message {
+  color: var(--color-text-muted);
+  font-style: italic;
+  font-size: var(--font-size-sm);
+  grid-column: 1 / -1;
+}
+
+/* Individual saved enquiry card */
+.enquiry-saved-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border-subtle);
+  border-left: 4px solid var(--color-antique-gold);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-base);
+}
+
+.enquiry-saved-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Card header: student name on the left, timestamp on the right */
+.enquiry-saved-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--color-border-subtle);
+  flex-wrap: wrap;
+}
+
+.enquiry-saved-name {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-burgundy);
+  font-size: var(--font-size-base);
+}
+
+.enquiry-saved-time {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+/* Card body: detail rows */
+.enquiry-saved-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.enquiry-saved-row {
+  font-size: var(--font-size-sm);
+  color: var(--color-espresso-text);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+.enquiry-saved-row strong {
+  color: var(--color-muted-wine);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Responsive: stack to single column on small screens */
+@media (max-width: 540px) {
+  .enquiry-list {
+    grid-template-columns: 1fr;
+  }
+
+  .enquiry-saved-card-header {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+}
+
+/* ==========================================================================
+   Fetch API — Loading & Error State Helpers
+   Shared by Departments, Faculty, and Notices grids while data is loading.
+   ========================================================================== */
+
+/* Shown while fetch() is in progress — spans the full grid width */
+.fetch-loading-message {
+  grid-column: 1 / -1;          /* Stretch across all columns in the grid */
+  text-align: center;
+  color: var(--color-text-muted);
+  font-style: italic;
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-2xl) var(--spacing-md);
+  letter-spacing: 0.03em;
+}
+
+/* Shown if the JSON file cannot be loaded (network error, file missing, etc.) */
+.fetch-error-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--color-error);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-xl) var(--spacing-md);
+  background-color: #FCEAEA;
+  border: 1px solid var(--color-error);
+  border-radius: var(--radius-md);
+}
+
+/* ==========================================================================
+   Academic Detail Views (Dedicated Department & Faculty Pages)
+   ========================================================================== */
+.dept-detail-view,
+.faculty-detail-view {
+  background-color: var(--color-warm-ivory);
+  padding: var(--spacing-2xl) 0 var(--spacing-3xl);
+  min-height: calc(100vh - var(--header-height) - 200px);
+}
+
+.detail-view-breadcrumb {
+  margin-bottom: var(--spacing-lg);
+}
+
+.detail-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-burgundy);
+  text-decoration: none;
+  padding: 6px 14px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-fast);
+}
+
+.detail-back-link:hover {
+  background-color: var(--color-burgundy);
+  color: var(--color-white);
+  border-color: var(--color-burgundy);
+  transform: translateX(-3px);
+}
+
+.detail-view-hero {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto var(--spacing-2xl);
+}
+
+.detail-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.detail-info-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-burgundy-light);
+}
+
+.detail-card-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-warm-ivory-dark);
+  color: var(--color-burgundy-dark);
+  margin-bottom: var(--spacing-md);
+}
+
+.detail-card-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xl);
+  color: var(--color-burgundy);
+  margin-bottom: var(--spacing-sm);
+}
+
+.detail-card-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+}
+
+.detail-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-feature-list li {
+  position: relative;
+  padding-left: 20px;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-main);
+  line-height: 1.5;
+}
+
+.detail-feature-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--color-antique-gold);
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.detail-view-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Faculty Notice / Mentorship Scope Box */
+.faculty-notice-box {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  background-color: rgba(212, 163, 115, 0.12);
+  border: 1px solid var(--color-antique-gold);
+  border-left: 4px solid var(--color-antique-gold);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin: 0 auto var(--spacing-2xl);
+  max-width: 900px;
+}
+
+.faculty-notice-icon {
+  font-size: 20px;
+  color: var(--color-burgundy);
+  line-height: 1.2;
+}
+
+.faculty-notice-content {
+  flex: 1;
+}
+
+.faculty-notice-title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-burgundy-deep);
+  margin-bottom: 4px;
+}
+
+.faculty-notice-text {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Site Footer (Deep Burgundy with Warm Ivory Text & Antique Gold Accents)
+   ========================================================================== */
+.site-footer {
+  background-color: var(--color-burgundy-dark);
+  color: var(--color-warm-ivory);
+  margin-top: auto;
+  border-top: 3px solid var(--color-antique-gold);
+}
+
+.footer-top {
+  padding-top: var(--spacing-3xl);
+  padding-bottom: var(--spacing-2xl);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1.2fr 1.6fr;
+  gap: var(--spacing-2xl);
+}
+
+.footer-col-title {
+  color: var(--color-antique-gold);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-md);
+  letter-spacing: 0.02em;
+}
+
+.footer-desc {
+  font-size: var(--font-size-sm);
+  color: rgba(247, 243, 239, 0.85);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer-links a {
+  color: rgba(247, 243, 239, 0.85);
+  font-size: var(--font-size-sm);
+  transition: color var(--transition-fast), padding-left var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--color-antique-gold);
+  padding-left: 4px;
+}
+
+.footer-contact-info {
+  font-size: var(--font-size-sm);
+  color: rgba(247, 243, 239, 0.85);
+  line-height: var(--line-height-relaxed);
+}
+
+.footer-contact-info p {
+  color: rgba(247, 243, 239, 0.85);
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer-bottom {
+  background-color: var(--color-burgundy-deep);
+  padding: var(--spacing-md) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-xs);
+  color: rgba(247, 243, 239, 0.75);
+}
+
+.footer-badge-tag {
+  background-color: var(--color-burgundy-deep);
+  color: var(--color-antique-gold);
+  border: 1px solid var(--color-burgundy);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .admission-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 820px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background-color: var(--color-burgundy-dark);
+    flex-direction: column;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-bottom: 1px solid var(--color-burgundy-deep);
+    box-shadow: var(--shadow-md);
+    gap: var(--spacing-xs);
+  }
+
+  .nav-menu.is-open {
+    display: flex;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-link {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    color: var(--color-warm-ivory);
+  }
+
+  .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: var(--color-white);
+  }
+
+  .nav-link.active,
+  .nav-link[aria-current="page"] {
+    background-color: var(--color-antique-gold);
+    color: var(--color-burgundy-deep);
+  }
+
+  /* Mobile Dropdown Styling */
+  .nav-item-has-dropdown {
+    width: 100%;
+  }
+
+  .nav-link-dropdown-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-link-dropdown-wrap .nav-link {
+    flex: 1;
+  }
+
+  .dropdown-toggle-btn {
+    padding: 10px 14px;
+    font-size: 13px;
+    color: var(--color-warm-ivory);
+    border-radius: var(--radius-sm);
+  }
+
+  .dropdown-toggle-btn:hover {
+    color: var(--color-antique-gold);
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-dropdown {
+    position: static;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.22);
+    border: none;
+    border-left: 3px solid var(--color-antique-gold);
+    margin: 4px 0 8px 12px;
+    padding: 4px 0;
+    min-width: auto;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  }
+
+  .nav-item-has-dropdown.is-dropdown-open > .nav-dropdown {
+    display: block;
+    animation: none;
+  }
+
+  .dropdown-link {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .nav-link-cta {
+    margin-left: 0;
+    margin-top: var(--spacing-xs);
+    text-align: center;
+    background-color: var(--color-antique-gold);
+    color: var(--color-burgundy-deep);
+  }
+
+  .top-bar-location {
+    display: none;
+  }
+
+  .hero-section {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .hero-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .about-preview-card {
+    padding: var(--spacing-xl);
+  }
+
+  .admission-cta-card {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .about-subsections-grid,
+  .departments-main-grid,
+  .courses-grid,
+  .faculty-grid,
+  .faculty-profiles-grid,
+  .notices-board-grid,
+  .detail-cards-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .detail-view-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .detail-view-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .enquiry-card-wrapper {
+    padding: var(--spacing-lg);
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-submit-btn {
+    width: 100%;
+  }
+
+  .admission-steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admissions-cta-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta-banner-btn {
+    width: 100%;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .admission-cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .admission-cta-actions .btn {
+    width: 100%;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}

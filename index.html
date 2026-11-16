@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Smart College Website Portal for D. Y. Patil College of Engineering, Akurdi, Pune. Built for Web Technology CCE-5.">
+  <title>D. Y. Patil College of Engineering, Akurdi | Smart College Portal</title>
+
+  <!-- Favicon / Browser Tab Icon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23542B36'/><text y='65' x='50' text-anchor='middle' font-size='48' font-family='serif' fill='%23C69B62' font-weight='bold'>DY</text></svg>">
+
+  <!-- ==========================================================================
+       Stylesheet Linking (Modular CSS Architecture)
+       1. variables.css: Design tokens (colors, typography, spacing)
+       2. base.css: Reset, base typography and utility classes
+       3. layout.css: Header, navigation bar, app-view container and footer
+       ========================================================================== -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+
+  <!-- ==========================================================================
+       External JavaScript (Deferred execution after HTML parsing)
+       ========================================================================== -->
+  <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       Top Affiliation & Information Bar
+       ========================================================================== -->
+  <aside class="top-bar" aria-label="College affiliation and quick contact">
+    <div class="container top-bar-content">
+      <div class="top-bar-info">
+        <span class="top-bar-badge">NAAC "A" Grade</span>
+        <span class="top-bar-badge">AICTE Approved</span>
+        <span class="top-bar-location">Affiliated to Savitribai Phule Pune University (SPPU)</span>
+      </div>
+      <div class="top-bar-contact">
+        <span>Akurdi, Pune - 411044</span>
+        <a href="mailto:principal@dypcoeakurdi.ac.in">principal@dypcoeakurdi.ac.in</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       Main Header & Sticky Navigation
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <!-- College Brand Identity -->
+      <a href="#home" class="brand" aria-label="D. Y. Patil College of Engineering Home">
+        <div class="brand-crest" aria-hidden="true">DYP</div>
+        <div class="brand-text">
+          <span class="brand-name">D. Y. Patil College of Engineering</span>
+          <span class="brand-subtext">Akurdi, Pune &bull; Established 1984</span>
+        </div>
+      </a>
+
+      <!-- Mobile Hamburger Menu Button -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <!-- Main Navigation Menu (SPA Hash Anchors & Dropdowns) -->
+      <nav id="siteNav" aria-label="Primary Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li class="nav-item">
+            <a href="#home" class="nav-link active" data-route="home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link" data-route="about">About</a>
+          </li>
+
+          <!-- Departments Item with Dropdown Menu -->
+          <li class="nav-item nav-item-has-dropdown" id="navItemDepartments">
+            <div class="nav-link-dropdown-wrap">
+              <a href="#departments" class="nav-link" data-route="departments">Departments</a>
+              <button type="button" class="dropdown-toggle-btn" aria-label="Toggle Departments submenu"
+                aria-expanded="false" aria-haspopup="true">
+                <span class="dropdown-chevron" aria-hidden="true">&#9662;</span>
+              </button>
+            </div>
+            <ul class="nav-dropdown" aria-label="Departments Submenu">
+              <li>
+                <a href="#departments/computer-engineering" class="dropdown-link">Computer Engineering</a>
+              </li>
+              <li>
+                <a href="#departments/information-technology" class="dropdown-link">Information Technology</a>
+              </li>
+              <li>
+                <a href="#departments/ai-and-ds" class="dropdown-link">Artificial Intelligence and Data Science</a>
+              </li>
+              <li>
+                <a href="#departments/entc" class="dropdown-link">Electronics and Telecommunication</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#courses" class="nav-link" data-route="courses">Courses</a>
+          </li>
+
+          <!-- Faculty Item with Dropdown Menu -->
+          <li class="nav-item nav-item-has-dropdown" id="navItemFaculty">
+            <div class="nav-link-dropdown-wrap">
+              <a href="#faculty" class="nav-link" data-route="faculty">Faculty</a>
+              <button type="button" class="dropdown-toggle-btn" aria-label="Toggle Faculty submenu"
+                aria-expanded="false" aria-haspopup="true">
+                <span class="dropdown-chevron" aria-hidden="true">&#9662;</span>
+              </button>
+            </div>
+            <ul class="nav-dropdown" aria-label="Faculty Submenu">
+              <li>
+                <a href="#faculty/computer-engineering" class="dropdown-link">Computer Engineering</a>
+              </li>
+              <li>
+                <a href="#faculty/information-technology" class="dropdown-link">Information Technology</a>
+              </li>
+              <li>
+                <a href="#faculty/ai-and-ds" class="dropdown-link">Artificial Intelligence and Data Science</a>
+              </li>
+              <li>
+                <a href="#faculty/entc" class="dropdown-link">Electronics and Telecommunication</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#notices" class="nav-link" data-route="notices">Notices</a>
+          </li>
+          <li class="nav-item">
+            <a href="#admissions" class="nav-link" data-route="admissions">Admissions</a>
+          </li>
+          <li class="nav-item">
+            <a href="#enquiry" class="nav-link nav-link-cta" data-route="enquiry">Enquiry</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Main Single-Page Application (SPA) Dynamic View Container
+       ========================================================================== -->
+  <main id="app-view" role="main">
+
+    <!-- ======================================================================
+         PAGE VIEW 1: HOME (#home)
+         ====================================================================== -->
+    <div class="page-view active" id="view-home">
+
+      <!-- 1. HERO SECTION -->
+      <section class="hero-section" id="home">
+        <div class="container hero-container">
+          <div class="hero-content">
+            <span class="section-badge">Welcome to DYPCOE</span>
+            <h1 class="hero-title">D. Y. Patil College of Engineering</h1>
+            <p class="hero-location">Akurdi, Pune &bull; Established 1984</p>
+            <p class="hero-description">
+              A premier engineering institution dedicated to academic excellence, innovative learning and professional
+              growth. Affiliated to Savitribai Phule Pune University (SPPU) and approved by AICTE, New Delhi.
+            </p>
+            <div class="hero-actions">
+              <a href="#departments" class="btn btn-primary">Explore Departments</a>
+              <a href="#admissions" class="btn btn-secondary">Admissions</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. ABOUT PREVIEW SECTION -->
+      <section class="section about-preview-section" id="home-about">
+        <div class="container">
+          <div class="about-preview-card">
+            <div class="section-header">
+              <span class="section-badge">About the Institution</span>
+              <h2 class="section-title">Committed to Quality Technical Education</h2>
+              <p class="section-subtitle">
+                Over four decades of shaping engineering minds through value-based technical learning.
+              </p>
+            </div>
+            <p class="about-preview-text">
+              D. Y. Patil College of Engineering, Akurdi, was founded in 1984 under the visionary leadership of Dr. D.
+              Y.
+              Patil. Situated in the educational complex at Nigdi Pradhikaran, Pune, the institution is accredited with
+              an
+              'A' Grade by NAAC and recognized by the Directorate of Technical Education (DTE), Maharashtra. The college
+              provides modern infrastructure, qualified faculty, active student chapters, and well-equipped laboratory
+              facilities across diverse engineering disciplines.
+            </p>
+            <div class="about-preview-action">
+              <a href="#about" class="btn btn-secondary">Explore More About College</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. DEPARTMENTS PREVIEW SECTION -->
+      <section class="section departments-preview-section" id="home-departments">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-badge">Academic Wings</span>
+            <h2 class="section-title">Key Engineering Departments</h2>
+            <p class="section-subtitle">
+              Explore our foundational and emerging technical disciplines.
+            </p>
+          </div>
+
+          <div class="departments-grid">
+            <!-- Department 1: Computer Engineering -->
+            <article class="dept-card">
+              <div class="dept-card-header">
+                <span class="dept-icon-badge">COMP</span>
+                <span class="dept-type-badge">UG &bull; PG</span>
+              </div>
+              <h3 class="dept-card-title">Computer Engineering</h3>
+              <p class="dept-card-desc">
+                Focuses on computer architecture, software development, data structures, algorithms, and cloud computing
+                principles.
+              </p>
+              <a href="#departments/computer-engineering" class="dept-link">View Department Details &rarr;</a>
+            </article>
+
+            <!-- Department 2: Information Technology -->
+            <article class="dept-card">
+              <div class="dept-card-header">
+                <span class="dept-icon-badge">IT</span>
+                <span class="dept-type-badge">UG Program</span>
+              </div>
+              <h3 class="dept-card-title">Information Technology</h3>
+              <p class="dept-card-desc">
+                Specializes in enterprise software development, database systems, cybersecurity, and web and mobile
+                applications.
+              </p>
+              <a href="#departments/information-technology" class="dept-link">View Department Details &rarr;</a>
+            </article>
+
+            <!-- Department 3: Artificial Intelligence & Data Science -->
+            <article class="dept-card dept-card-featured">
+              <div class="dept-card-header">
+                <span class="dept-icon-badge dept-badge-featured">AI &amp; DS</span>
+                <span class="dept-type-badge">Emerging Tech</span>
+              </div>
+              <h3 class="dept-card-title">Artificial Intelligence &amp; Data Science</h3>
+              <p class="dept-card-desc">
+                Focuses on machine learning, deep learning models, big data analytics, natural language processing, and
+                statistical inference.
+              </p>
+              <a href="#departments/ai-and-ds" class="dept-link">View Department Details &rarr;</a>
+            </article>
+
+            <!-- Department 4: Electronics & Telecommunication -->
+            <article class="dept-card">
+              <div class="dept-card-header">
+                <span class="dept-icon-badge">E&amp;TC</span>
+                <span class="dept-type-badge">UG &bull; PG</span>
+              </div>
+              <h3 class="dept-card-title">Electronics &amp; Telecommunication</h3>
+              <p class="dept-card-desc">
+                Covers embedded system design, signal processing, VLSI design, wireless communication, and IoT
+                architectures.
+              </p>
+              <a href="#departments/entc" class="dept-link">View Department Details &rarr;</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. ADMISSION CALL-TO-ACTION SECTION -->
+      <section class="section admission-cta-section" id="home-admissions">
+        <div class="container">
+          <div class="admission-cta-card">
+            <div class="admission-cta-content">
+              <span class="section-badge">Admissions 2026&ndash;27</span>
+              <h2 class="admission-cta-title">Begin Your Engineering Career at DYPCOE</h2>
+              <p class="admission-cta-desc">
+                Admissions for Undergraduate (B.E.) and Postgraduate (M.E.) programs are conducted through the
+                Centralized
+                Admission Process (CAP) governed by DTE Maharashtra (College Code: 6272).
+              </p>
+              <div class="admission-cta-actions">
+                <a href="#admissions" class="btn btn-primary">Admissions Overview</a>
+                <a href="#enquiry" class="btn btn-secondary">Submit Student Enquiry</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. ANNOUNCEMENTS PREVIEW SECTION -->
+      <section class="section notices-preview-section" id="home-notices">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-badge">Campus Updates</span>
+            <h2 class="section-title">Latest Announcements</h2>
+            <p class="section-subtitle">
+              Stay informed with current circulars, exam schedules, and academic activities.
+            </p>
+          </div>
+
+          <div class="notices-grid">
+            <!-- Sample Notice 1 -->
+            <article class="notice-card">
+              <div class="notice-card-header">
+                <span class="notice-sample-tag">Sample Announcement</span>
+                <time class="notice-date" datetime="2026-11-10">Nov 10, 2026</time>
+              </div>
+              <h3 class="notice-card-title">In-Semester Examination Schedule</h3>
+              <p class="notice-card-text">
+                Sample notice regarding timetable and seating arrangements for upcoming Savitribai Phule Pune University
+                in-sem examinations.
+              </p>
+              <span class="notice-category">Category: Examination</span>
+            </article>
+
+            <!-- Sample Notice 2 -->
+            <article class="notice-card">
+              <div class="notice-card-header">
+                <span class="notice-sample-tag">Sample Announcement</span>
+                <time class="notice-date" datetime="2026-11-05">Nov 05, 2026</time>
+              </div>
+              <h3 class="notice-card-title">Mini Project Topic Submission</h3>
+              <p class="notice-card-text">
+                Sample notice notifying third-year engineering students to submit project problem definitions and guide
+                allocation forms.
+              </p>
+              <span class="notice-category">Category: Academic</span>
+            </article>
+
+            <!-- Sample Notice 3 -->
+            <article class="notice-card">
+              <div class="notice-card-header">
+                <span class="notice-sample-tag">Sample Announcement</span>
+                <time class="notice-date" datetime="2026-10-28">Oct 28, 2026</time>
+              </div>
+              <h3 class="notice-card-title">Annual Technical Symposium Registration</h3>
+              <p class="notice-card-text">
+                Sample notice announcing registration dates for state-level project exhibitions, paper presentations,
+                and
+                coding competitions.
+              </p>
+              <span class="notice-category">Category: Event</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- end #view-home -->
+
+    <!-- ==========================================================================
+         PAGE VIEW 2: ABOUT OUR COLLEGE (#about)
+         ========================================================================== -->
+    <section class="section about-section page-view" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Institutional Overview</span>
+          <h2 class="section-title">About Our College</h2>
+          <p class="section-subtitle">
+            Dedicated to nurturing technical expertise, research aptitude and ethical professional values.
+          </p>
+        </div>
+
+        <!-- Brief Introduction -->
+        <div class="about-intro-box">
+          <p>
+            <strong>D. Y. Patil College of Engineering (DYPCOE)</strong>, located in Akurdi, Pune, was established in
+            1984 under the aegis of Dr. D. Y. Patil Pratishthan. Situated within the D. Y. Patil Educational Complex in
+            Nigdi Pradhikaran, the college is approved by the All India Council for Technical Education (AICTE), New
+            Delhi, recognized by the Directorate of Technical Education (DTE), Government of Maharashtra, and affiliated
+            to Savitribai Phule Pune University (SPPU). The institution holds an <strong>'A' Grade accreditation from
+              NAAC</strong> and offers comprehensive degree programs across diverse engineering disciplines.
+          </p>
+        </div>
+
+        <!-- Subsections Grid: Academic Environment & Student Development -->
+        <div class="about-subsections-grid">
+          <!-- Subsection A: Academic Environment -->
+          <article class="about-card">
+            <span class="about-card-badge">Teaching &amp; Infrastructure</span>
+            <h3 class="about-card-title">Academic Environment</h3>
+            <p class="about-card-text">
+              The academic framework at DYPCOE aligns with the curriculum set by Savitribai Phule Pune University,
+              combining rigorous theoretical foundations with practical laboratory learning.
+            </p>
+            <ul class="about-feature-list">
+              <li>Qualified faculty members with academic and industry experience</li>
+              <li>Department-specific computing centers and hardware laboratories</li>
+              <li>Central library with access to technical textbooks, reference materials and journals</li>
+              <li>Structured continuous assessment and student mentoring system</li>
+            </ul>
+          </article>
+
+          <!-- Subsection B: Learning, Innovation & Student Development -->
+          <article class="about-card">
+            <span class="about-card-badge">Holistic Growth</span>
+            <h3 class="about-card-title">Learning, Innovation &amp; Development</h3>
+            <p class="about-card-text">
+              Beyond standard classroom instruction, students are encouraged to engage in active problem-solving,
+              project-based engineering, and professional skill enhancement.
+            </p>
+            <ul class="about-feature-list">
+              <li>Encouragement for mini-projects, capstone designs and technical competitions</li>
+              <li>Active student chapters of professional bodies and technical clubs</li>
+              <li>Workshops on emerging programming languages, tools and frameworks</li>
+              <li>Guidance for industry internships, seminars and soft-skill development</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PAGE VIEW 3: OUR DEPARTMENTS (#departments)
+         ========================================================================== -->
+    <section class="section departments-section page-view" id="departments">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Academic Wings</span>
+          <h2 class="section-title">Our Departments</h2>
+          <p class="section-subtitle">
+            D. Y. Patil College of Engineering offers undergraduate and postgraduate engineering programs designed to
+            prepare students for core industries and technological innovation.
+          </p>
+        </div>
+
+        <!-- Department Cards Grid — populated dynamically from data/departments.json -->
+        <div id="departments-grid" class="departments-main-grid">
+          <!-- Loading placeholder shown while fetch() retrieves departments.json -->
+          <p class="fetch-loading-message">Loading departments&#8230;</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         PAGE VIEW 3A: COMPUTER ENGINEERING (#departments/computer-engineering)
+         ====================================================================== -->
+    <section class="section dept-detail-view page-view" id="view-dept-computer-engineering">
+      <div class="container">
+        <div class="detail-view-breadcrumb">
+          <a href="#departments" class="detail-back-link">&larr; Back to All Departments</a>
+        </div>
+
+        <div class="detail-view-hero">
+          <span class="section-badge">UG &bull; PG Department</span>
+          <h2 class="section-title">Department of Computer Engineering</h2>
+          <p class="section-subtitle">
+            Focuses on the theoretical foundations of computation, algorithms, software engineering principles,
+            distributed systems, and computer network architecture.
+          </p>
+        </div>
+
+        <div class="detail-cards-grid">
+          <article class="detail-info-card">
+            <h3 class="detail-card-title">Core Curriculum Focus</h3>
+            <p class="detail-card-text">
+              The curriculum is aligned with Savitribai Phule Pune University standards, offering structured progression
+              from fundamental computation theory to modern distributed systems.
+            </p>
+            <div class="dept-focus-tags">
+              <span class="dept-tag">Data Structures &amp; Algorithms</span>
+              <span class="dept-tag">Operating Systems</span>
+              <span class="dept-tag">Software Engineering</span>
+              <span class="dept-tag">Cloud Computing</span>
+              <span class="dept-tag">Database Management</span>
+              <span class="dept-tag">Computer Networks</span>
+            </div>
+          </article>
+
+          <article class="detail-info-card">
+            <h3 class="detail-card-title">Laboratory &amp; Computing Infrastructure</h3>
+            <p class="detail-card-text">
+              Department laboratories are equipped with high-performance computing systems, Linux-based development
+              environments, and cloud infrastructure support.
+            </p>
+            <ul class="detail-feature-list">
+              <li>Advanced Computing &amp; Systems Lab</li>
+              <li>Software Engineering &amp; Project Lab</li>
+              <li>Algorithms &amp; Programming Lab</li>
+              <li>Cloud &amp; Distributed Networks Lab</li>
+            </ul>
+          </article>
+
+          <article class="detail-info-card">
+            <h3 class="detail-card-title">Academic &amp; Student Development</h3>
+            <p class="detail-card-text">
+              Students actively participate in technical forums, open-source development, and peer coding competitions
+              through the departmental student body.
+            </p>
+            <ul class="detail-feature-list">
+              <li>Computer Engineering Student Association (CESA)</li>
+              <li>Annual coding hackathons and technical project expos</li>
+              <li>Industry guest lectures and open-source workshops</li>
+              <li>Faculty mentoring for capstone and mini-projects</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="detail-view-actions">
+          <a href="#faculty/computer-engineering" class="btn btn-primary">View Department Faculty</a>
+          <a href="#enquiry" class="btn btn-secondary">Student Enquiry</a>
+          <a href="#departments" class="btn btn-secondary">&larr; All Departments</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         PAGE VIEW 3B: INFORMATION TECHNOLOGY (#departments/information-technology)
+         ====================================================================== -->
+    <section class="section dept-detail-view page-view" id="view-dept-information-technology">
+      <div class="container">
+        <div class="detail-view-breadcrumb">
+          <a href="#departments" class="detail-back-link">&larr; Back to All Departments</a>
+        </div>
+
+        <div class="detail-view-hero">
+          <span class="section-badge">UG Program</span>
+          <h2 class="section-title">Department of Information Technology</h2>
+          <p class="section-subtitle">
+            Emphasizes information systems, enterprise application development, web technologies, database
+            administration, and modern cybersecurity strategies.
+          </p>
+        </div>
+
+        <div class="detail-cards-grid">
+          <article class="detail-info-card">
+            <h3 class="detail-card-title">Core Curriculum Focus</h3>
+            <p class="detail-card-text">
+              Designed to equip students with hands-on expertise in enterprise information infrastructure, modern web
+              and mobile frameworks, and network security protocols.
+            </p>
+            <div class="dept-focus-tags">
+              <span class="dept-tag">Web Technologies</span>
+              <span class="dept-tag">Database Management</span>
+              <span class="dept-tag">Network Security</span>
+              <span class="dept-tag">Full-Stack Development</span>
+              <span class="dept-tag">Information Systems</span>
+              <span class="dept-tag">Cyber Security</span>
+            </div>
+          </article>
+
+          <article class="detail-info-card">
+            <h3 class="detail-card-title">Laboratory &amp; Systems Infrastructure</h3>
+            <p class="detail-card-text">
+              Modern laboratory facilities enable students to build full-stack enterprise applications and simulate
+              secure networking environments.
+            </p>
+            <ul class="detail-feature-list">
+              <li>Enterprise Web Technologies Lab</li>
+              <li>Database Systems &amp; Administration Lab</li>
+              <li>Network Security &amp; Cryptography Lab</li>
+              <li>Full-Stack Project Development Lab</li>
+            </ul>
+          </article>
+
+          <article class="detail-info-card">
+            <h3 class="detail-card-title">Academic &amp; Student Development</h3>
+            <p class="detail-card-text">
+              The department fosters active student technical communities, soft skill enhancement sessions, and guidance
+              for technical certifications.
+            </p>
+            <ul class="detail-feature-list">
+              <li>Information Technology Student Association (ITSA)</li>
+              <li>Workshops on modern frontend and backend frameworks</li>
+              <li>Seminars on cyber hygiene and enterprise software practice</li>
+              <li>Internship guidance and continuous laboratory assessment</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="detail-view-actions">
+          <a href="#faculty/information-technology" class="btn btn-primary">View Department Faculty</a>
+          <a href="#enquiry" class="btn btn-secondary">Student Enquiry</a>
+          <a href="#departments" class="btn btn-secondary">&larr; All Departments</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         PAGE VIEW 3C: ARTIFICIAL INTELLIGENCE & DATA SCIENCE (#departments/ai-and-ds)
+         ====================================================================== -->
+    <section class="section dept-detail-view page-view" id="view-dept-ai-and-ds">
+      <div class="container">
+        <div class="detail-view-breadcrumb">
+          <a href="#departments" class="detail-back-link">&larr; Back to All Departments</a>
+        </div>
+
+        <div class="detail-view-hero">
+          <span class="section-badge">Emerging Tech</span>
+          <h2 class="section-title">Department of Artificial Intelligence &amp; Data Science</h2>
+          <p class="section-subtitle">
+            Dedicated to computational intelligence, mathematical modeling, statistical analysis, machine learning
+            algorithms, and deep neural network frameworks for large-scale data analytics.
+          </p>
+        </div>
+
+        <div class="detail-cards-grid">
+          <article class="detail-info-card">
+            <h3 class="detail-card-title">Core Curriculum Focus</h3>
+            <p class="detail-card-text">
+              Combines robust mathematical and probabilistic foundations with applied deep learning models, natural
+              language processing, and big data visualization.
+            </p>
+            <div class="dept-focus-tags">
+              <span class="dept-tag">Machine Learning</span>
+              <span class="dept-tag">Deep Learning</span>
+              <span class="dept-tag">Big Data Analytics</span>
+              <span class="dept-tag">Natural Language Processing</span>
+              <span class="dept-tag">Statistical Inference</span>
+              <span class="dept-tag">Data Visualization</span>
+            </div>
+          </article>
+
+          <article class="detail-info-card">
+            <h3 class="detail-card-title">Specialized AI &amp; Analytics Labs</h3>
+            <p class="detail-card-text">
+              Equipped with high-compute workstations, Python data science toolkits, GPU computing frameworks, and
+              distributed big data environments.
+            </p>
+            <ul class="detail-feature-list">
+              <li>Machine Learning &amp; Neural Networks Lab</li>
+              <li>Data Science &amp; Statistical Modeling Lab</li>
+              <li>Natural Language Processing &amp; AI Research Lab</li>
+              <li>Big Data Analytics &amp; Pipeline Lab</li>
+            </ul>
+          </article>
+
+          <article class="detail-info-card">
+            <h3 class="detail-card-title">Academic &amp; Student Development</h3>
+            <p class="detail-card-text">
+              Students engage in AI hackathons, open dataset challenges, and interdisciplinary data modeling projects
+              guided by dedicated faculty mentors.
+            </p>
+            <ul class="detail-feature-list">
+              <li>AI &amp; Data Science Student Forum (AIDSF)</li>
+              <li>Kaggle-style dataset challenges and competitions</li>
+              <li>Hands-on workshops with PyTorch, TensorFlow, and Pandas</li>
+              <li>Project-based learning with real-world public datasets</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="detail-view-actions">
+          <a href="#faculty/ai-and-ds" class="btn btn-primary">View Department Faculty</a>
+          <a href="#enquiry" class="btn btn-secondary">Student Enquiry</a>
+          <a href="#departments" class="btn btn-secondary">&larr; All Departments</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         PAGE VIEW 3D: ELECTRONICS & TELECOMMUNICATION (#departments/entc)
+         ====================================================================== -->
+    <section class="section dept-detail-view page-view" id="view-dept-entc">
+      <div class="container">
+        <div class="detail-view-breadcrumb">
+          <a href="#departments" class="detail-back-link">&larr; Back to All Departments</a>
+        </div>
+
+        <div class="detail-view-hero">
+          <span class="section-badge">UG &bull; PG Department</span>
+          <h2 class="section-title">Department of Electronics &amp; Telecommunication</h2>
+          <p class="section-subtitle">
+            Covers semiconductor devices, embedded systems, microcontrollers, digital signal processing, VLSI design,
+            wireless communication, and IoT architectures.
+          </p>
+        </div>
+
+        <div class="detail-cards-grid">
+          <article class="detail-info-card">
+            <h3 class="detail-card-title">Core Curriculum Focus</h3>
+            <p class="detail-card-text">
+              Integrates semiconductor circuit theory, microcontrollers, digital signal processing algorithms, and RF
+              communication systems.
+            </p>
+            <div class="dept-focus-tags">
+              <span class="dept-tag">Embedded Systems</span>
+              <span class="dept-tag">VLSI Design</span>
+              <span class="dept-tag">Digital Signal Processing</span>
+              <span class="dept-tag">IoT &amp; Wireless Systems</span>
+              <span class="dept-tag">Microcontrollers</span>
+              <span class="dept-tag">Communication Networks</span>
+            </div>
+          </article>
+
+          <article class="detail-info-card">
+            <h3 class="detail-card-title">Hardware &amp; Communications Labs</h3>
+            <p class="detail-card-text">
+              Provides dedicated hardware kits, digital oscilloscopes, signal generators, FPGA boards, and IoT sensor
+              network kits for hands-on prototyping.
+            </p>
+            <ul class="detail-feature-list">
+              <li>Embedded Systems &amp; Microcontroller Lab</li>
+              <li>VLSI Design &amp; Simulation Lab</li>
+              <li>Digital Signal Processing (DSP) Lab</li>
+              <li>Wireless Communication &amp; IoT Hardware Lab</li>
+            </ul>
+          </article>
+
+          <article class="detail-info-card">
+            <h3 class="detail-card-title">Academic &amp; Student Development</h3>
+            <p class="detail-card-text">
+              Prepares students for core electronics industries and embedded firmware development through hands-on
+              circuit design and project exhibitions.
+            </p>
+            <ul class="detail-feature-list">
+              <li>Electronics &amp; Telecommunication Student Association (ETSA)</li>
+              <li>Hardware circuit design and robotics competitions</li>
+              <li>Workshops on PCB layout and microcontroller programming</li>
+              <li>Seminars on 5G wireless networks and semiconductor trends</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="detail-view-actions">
+          <a href="#faculty/entc" class="btn btn-primary">View Department Faculty</a>
+          <a href="#enquiry" class="btn btn-secondary">Student Enquiry</a>
+          <a href="#departments" class="btn btn-secondary">&larr; All Departments</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PAGE VIEW 4: EXPLORE OUR COURSES (#courses)
+         ========================================================================== -->
+    <section class="section courses-section page-view" id="courses">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Academic Programs</span>
+          <h2 class="section-title">Explore Our Courses</h2>
+          <p class="section-subtitle">
+            Comprehensive undergraduate curricula structured under Savitribai Phule Pune University to build analytical
+            thinking, engineering design, and practical software skills.
+          </p>
+        </div>
+
+        <!-- Course Cards Grid (CSS Grid) with Minimal Initial View & Expandable Details -->
+        <div class="courses-grid">
+          <!-- Course Card 1: BE Computer Engineering -->
+          <article class="course-card" id="course-card-ce">
+            <div class="course-card-top">
+              <span class="course-level-badge">UG Degree Programme</span>
+              <span class="course-code-badge">Dept. Code: CE</span>
+            </div>
+
+            <h3 class="course-title">BE Computer Engineering</h3>
+
+            <p class="course-description">
+              A foundational four-year engineering program covering theoretical computer science, software architecture,
+              operating systems internals, cloud systems, and distributed algorithmic computing.
+            </p>
+
+            <div class="course-card-action">
+              <button type="button" class="course-toggle-btn" aria-expanded="false" aria-controls="course-details-ce">
+                <span class="toggle-btn-text">View Details</span>
+                <svg class="toggle-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <a href="#departments/computer-engineering" class="course-dept-link">Explore Department &rarr;</a>
+            </div>
+
+            <!-- Expandable Course Details Panel -->
+            <div class="course-expandable-panel" id="course-details-ce" aria-hidden="true">
+              <div class="course-details-content">
+
+                <!-- 1. Programme Duration -->
+                <div class="course-detail-group duration-highlight">
+                  <span class="detail-label">Programme Duration:</span>
+                  <span class="detail-value">4 Years (8 Semesters), Full-Time Undergraduate Degree</span>
+                </div>
+
+                <!-- 2. Core Areas of Study -->
+                <div class="course-detail-group">
+                  <h4 class="detail-group-title">Core Areas of Study</h4>
+                  <div class="course-tag-cloud">
+                    <span class="course-tag">Algorithms &amp; Complexity</span>
+                    <span class="course-tag">Operating Systems</span>
+                    <span class="course-tag">Distributed Systems</span>
+                    <span class="course-tag">Cloud Infrastructure</span>
+                    <span class="course-tag">Computer Networks</span>
+                  </div>
+                </div>
+
+                <!-- 3. Key Subjects Covered -->
+                <div class="course-detail-group">
+                  <h4 class="detail-group-title">Key Subjects Covered</h4>
+                  <ul class="course-detail-list">
+                    <li>Data Structures and Algorithm Analysis</li>
+                    <li>Operating Systems Internals and Concurrency</li>
+                    <li>Database Management Systems and SQL</li>
+                    <li>Software Engineering and Agile Methodologies</li>
+                    <li>Computer Networks and Cryptography</li>
+                    <li>Theory of Computation and Compiler Design</li>
+                  </ul>
+                </div>
+
+                <!-- 4. Skills Students Develop -->
+                <div class="course-detail-group">
+                  <h4 class="detail-group-title">Skills Students Develop</h4>
+                  <ul class="course-detail-list">
+                    <li>Scalable full-stack software and backend API engineering</li>
+                    <li>System-level programming and multithreaded debugging</li>
+                    <li>Algorithmic complexity reduction and computational problem-solving</li>
+                    <li>Relational and NoSQL database modeling and optimization</li>
+                  </ul>
+                </div>
+
+                <!-- 5. Possible Career Opportunities -->
+                <div class="course-detail-group">
+                  <h4 class="detail-group-title">Possible Career Opportunities</h4>
+                  <div class="course-tag-cloud career-cloud">
+                    <span class="career-tag">Software Development Engineer (SDE)</span>
+                    <span class="career-tag">Systems Architect</span>
+                    <span class="career-tag">Cloud Solutions Engineer</span>
+                    <span class="career-tag">Backend Infrastructure Engineer</span>
+                    <span class="career-tag">Cybersecurity Specialist</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </article>
+
+          <!-- Course Card 2: BE Information Technology -->
+          <article class="course-card" id="course-card-it">
+            <div class="course-card-top">
+              <span class="course-level-badge">UG Degree Programme</span>
+              <span class="course-code-badge">Dept. Code: IT</span>
+            </div>
+
+            <h3 class="course-title">BE Information Technology</h3>
+
+            <p class="course-description">
+              An application-driven undergraduate curriculum emphasizing enterprise web systems, secure networking,
+              cloud infrastructure, database engineering, and cybersecurity defence protocols.
+            </p>
+
+            <div class="course-card-action">
+              <button type="button" class="course-toggle-btn" aria-expanded="false" aria-controls="course-details-it">
+                <span class="toggle-btn-text">View Details</span>
+                <svg class="toggle-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <a href="#departments/information-technology" class="course-dept-link">Explore Department &rarr;</a>
+            </div>
+
+            <!-- Expandable Course Details Panel -->
+            <div class="course-expandable-panel" id="course-details-it" aria-hidden="true">
+              <div class="course-details-content">
+
+                <!-- 1. Programme Duration -->
+                <div class="course-detail-group duration-highlight">
+                  <span class="detail-label">Programme Duration:</span>
+                  <span class="detail-value">4 Years (8 Semesters), Full-Time Undergraduate Degree</span>
+                </div>
+
+                <!-- 2. Core Areas of Study -->
+                <div class="course-detail-group">
+                  <h4 class="detail-group-title">Core Areas of Study</h4>
+                  <div class="course-tag-cloud">
+                    <span class="course-tag">Enterprise Web Systems</span>
+                    <span class="course-tag">Information Security</span>
+                    <span class="course-tag">Cloud &amp; Virtualization</span>
+                    <span class="course-tag">Data Engineering</span>
+                    <span class="course-tag">Internet Technologies</span>
+                  </div>
+                </div>
+
+                <!-- 3. Key Subjects Covered -->
+                <div class="course-detail-group">
+                  <h4 class="detail-group-title">Key Subjects Covered</h4>
+                  <ul class="course-detail-list">
+                    <li>Full-Stack Web Technologies and Modern Frameworks</li>
+                    <li>Information and Cyber Security Protocols</li>
+                    <li>Cloud Infrastructure and Containerized Services</li>
+                    <li>Object-Oriented Programming and Design Patterns</li>
+                    <li>Database Administration and Big Data Basics</li>
+                    <li>Network Architecture and Ethical Hacking Foundations</li>
+                  </ul>
+                </div>
+
+                <!-- 4. Skills Students Develop -->
+                <div class="course-detail-group">
+                  <h4 class="detail-group-title">Skills Students Develop</h4>
+                  <ul class="course-detail-list">
+                    <li>Building responsive enterprise web applications and RESTful APIs</li>
+                    <li>Implementing threat protection, access control, and data encryption</li>
+                    <li>Configuring continuous integration (CI/CD) and cloud hosting</li>
+                    <li>Data modeling and enterprise relational database administration</li>
+                  </ul>
+                </div>
+
+                <!-- 5. Possible Career Opportunities -->
+                <div class="course-detail-group">
+                  <h4 class="detail-group-title">Possible Career Opportunities</h4>
+                  <div class="course-tag-cloud career-cloud">
+                    <span class="career-tag">Full-Stack Web Developer</span>
+                    <span class="career-tag">Information Security Analyst</span>
+                    <span class="career-tag">DevOps &amp; Cloud Operations Engineer</span>
+                    <span class="career-tag">Database Administrator</span>
+                    <span class="career-tag">Enterprise Solutions Specialist</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </article>
+
+          <!-- Course Card 3: BE Artificial Intelligence and Data Science -->
+          <article class="course-card course-card-featured" id="course-card-aids">
+            <div class="course-card-top">
+              <span class="course-level-badge course-badge-highlight">Emerging Tech</span>
+              <span class="course-code-badge">Dept. Code: AI&amp;DS</span>
+            </div>
+
+            <h3 class="course-title">BE Artificial Intelligence and Data Science</h3>
+
+            <p class="course-description">
+              A modern specialized engineering curriculum focusing on statistical inference, neural network
+              architectures, predictive machine learning algorithms, and distributed big data pipelines.
+            </p>
+
+            <div class="course-card-action">
+              <button type="button" class="course-toggle-btn" aria-expanded="false" aria-controls="course-details-aids">
+                <span class="toggle-btn-text">View Details</span>
+                <svg class="toggle-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <a href="#departments/ai-and-ds" class="course-dept-link">Explore Department &rarr;</a>
+            </div>
+
+            <!-- Expandable Course Details Panel -->
+            <div class="course-expandable-panel" id="course-details-aids" aria-hidden="true">
+              <div class="course-details-content">
+
+                <!-- 1. Programme Duration -->
+                <div class="course-detail-group duration-highlight">
+                  <span class="detail-label">Programme Duration:</span>
+                  <span class="detail-value">4 Years (8 Semesters), Full-Time Undergraduate Degree</span>
+                </div>
+
+                <!-- 2. Core Areas of Study -->
+                <div class="course-detail-group">
+                  <h4 class="detail-group-title">Core Areas of Study</h4>
+                  <div class="course-tag-cloud">
+                    <span class="course-tag">Machine Learning</span>
+                    <span class="course-tag">Deep Neural Networks</span>
+                    <span class="course-tag">Natural Language Processing</span>
+                    <span class="course-tag">Computer Vision</span>
+                    <span class="course-tag">Big Data Analytics</span>
+                  </div>
+                </div>
+
+                <!-- 3. Key Subjects Covered -->
+                <div class="course-detail-group">
+                  <h4 class="detail-group-title">Key Subjects Covered</h4>
+                  <ul class="course-detail-list">
+                    <li>Supervised, Unsupervised, and Reinforcement Learning</li>
+                    <li>Deep Learning Architectures and PyTorch Implementation</li>
+                    <li>Natural Language Processing and Conversational AI</li>
+                    <li>Big Data Analytics and Distributed Spark Systems</li>
+                    <li>Mathematical &amp; Statistical Foundations for AI</li>
+                    <li>Computer Vision and Image Processing Techniques</li>
+                  </ul>
+                </div>
+
+                <!-- 4. Skills Students Develop -->
+                <div class="course-detail-group">
+                  <h4 class="detail-group-title">Skills Students Develop</h4>
+                  <ul class="course-detail-list">
+                    <li>Designing, training, evaluating, and fine-tuning neural network models</li>
+                    <li>Processing massive multi-format datasets with streaming and batch tools</li>
+                    <li>Feature engineering, exploratory analysis, and statistical hypothesis testing</li>
+                    <li>Deploying production ML models with containerized inference pipelines</li>
+                  </ul>
+                </div>
+
+                <!-- 5. Possible Career Opportunities -->
+                <div class="course-detail-group">
+                  <h4 class="detail-group-title">Possible Career Opportunities</h4>
+                  <div class="course-tag-cloud career-cloud">
+                    <span class="career-tag">Machine Learning Engineer</span>
+                    <span class="career-tag">Data Scientist</span>
+                    <span class="career-tag">Big Data Platform Engineer</span>
+                    <span class="career-tag">NLP / Computer Vision Specialist</span>
+                    <span class="career-tag">AI Solutions Architect</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </article>
+
+          <!-- Course Card 4: BE Electronics and Telecommunication -->
+          <article class="course-card" id="course-card-entc">
+            <div class="course-card-top">
+              <span class="course-level-badge">UG Degree Programme</span>
+              <span class="course-code-badge">Dept. Code: E&amp;TC</span>
+            </div>
+
+            <h3 class="course-title">BE Electronics and Telecommunication</h3>
+
+            <p class="course-description">
+              An interdisciplinary degree bridging semiconductor microelectronics, VLSI hardware synthesis, embedded
+              microcontrollers, 5G wireless communication protocols, and IoT smart devices.
+            </p>
+
+            <div class="course-card-action">
+              <button type="button" class="course-toggle-btn" aria-expanded="false" aria-controls="course-details-entc">
+                <span class="toggle-btn-text">View Details</span>
+                <svg class="toggle-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <a href="#departments/entc" class="course-dept-link">Explore Department &rarr;</a>
+            </div>
+
+            <!-- Expandable Course Details Panel -->
+            <div class="course-expandable-panel" id="course-details-entc" aria-hidden="true">
+              <div class="course-details-content">
+
+                <!-- 1. Programme Duration -->
+                <div class="course-detail-group duration-highlight">
+                  <span class="detail-label">Programme Duration:</span>
+                  <span class="detail-value">4 Years (8 Semesters), Full-Time Undergraduate Degree</span>
+                </div>
+
+                <!-- 2. Core Areas of Study -->
+                <div class="course-detail-group">
+                  <h4 class="detail-group-title">Core Areas of Study</h4>
+                  <div class="course-tag-cloud">
+                    <span class="course-tag">VLSI &amp; Microelectronics</span>
+                    <span class="course-tag">Embedded Systems</span>
+                    <span class="course-tag">5G Wireless Networks</span>
+                    <span class="course-tag">Digital Signal Processing</span>
+                    <span class="course-tag">IoT Hardware</span>
+                  </div>
+                </div>
+
+                <!-- 3. Key Subjects Covered -->
+                <div class="course-detail-group">
+                  <h4 class="detail-group-title">Key Subjects Covered</h4>
+                  <ul class="course-detail-list">
+                    <li>Embedded Microcontrollers and ARM Architecture</li>
+                    <li>VLSI Design, CMOS Circuits, and VHDL / Verilog Simulation</li>
+                    <li>Digital Signal Processing and Multirate Systems</li>
+                    <li>Cellular 5G Communications and RF System Design</li>
+                    <li>Internet of Things (IoT) Protocols and Wireless Sensor Networks</li>
+                    <li>Electronic Devices, Linear Integrated Circuits, and PCB Design</li>
+                  </ul>
+                </div>
+
+                <!-- 4. Skills Students Develop -->
+                <div class="course-detail-group">
+                  <h4 class="detail-group-title">Skills Students Develop</h4>
+                  <ul class="course-detail-list">
+                    <li>Low-level firmware development in embedded C/C++ and RTOS</li>
+                    <li>FPGA logic synthesis and digital circuit verification</li>
+                    <li>Radio-frequency (RF) signal measurement and antenna evaluation</li>
+                    <li>Hardware-software integration for industrial IoT edge nodes</li>
+                  </ul>
+                </div>
+
+                <!-- 5. Possible Career Opportunities -->
+                <div class="course-detail-group">
+                  <h4 class="detail-group-title">Possible Career Opportunities</h4>
+                  <div class="course-tag-cloud career-cloud">
+                    <span class="career-tag">Embedded Firmware Engineer</span>
+                    <span class="career-tag">VLSI / ASIC Design Engineer</span>
+                    <span class="career-tag">Wireless &amp; Telecom Systems Engineer</span>
+                    <span class="career-tag">IoT Hardware Architect</span>
+                    <span class="career-tag">Robotics &amp; Automation Specialist</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PAGE VIEW 5: MEET OUR FACULTY (#faculty)
+         ========================================================================== -->
+    <section class="section faculty-section page-view" id="faculty">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Academic Team</span>
+          <h2 class="section-title">Faculty Directory</h2>
+          <p class="section-subtitle">
+            Explore our qualified faculty educators across all four engineering departments. Select an academic
+            department below to view its faculty profiles, qualifications, and teaching specializations.
+          </p>
+        </div>
+
+        <!-- Faculty Department Overview Cards Grid — populated from data/faculty.json -->
+        <div id="faculty-grid" class="faculty-grid">
+          <!-- Loading placeholder shown while fetch() retrieves faculty.json -->
+          <p class="fetch-loading-message">Loading faculty directory&#8230;</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         PAGE VIEW 5A: COMPUTER ENGINEERING FACULTY (#faculty/computer-engineering)
+         ====================================================================== -->
+    <section class="section faculty-detail-view page-view" id="view-faculty-computer-engineering">
+      <div class="container">
+        <div class="detail-view-breadcrumb">
+          <a href="#faculty" class="detail-back-link">&larr; Back to Faculty Directory</a>
+        </div>
+
+        <div class="detail-view-hero">
+          <span class="section-badge">Department Faculty</span>
+          <h2 class="section-title">Computer Engineering &mdash; Faculty Directory</h2>
+          <p class="section-subtitle">
+            Department faculty members, teaching qualifications, professional experience, and academic specializations.
+          </p>
+          <div class="faculty-demo-disclaimer" role="note">
+            <span class="disclaimer-badge">Demonstration Data</span>
+            <span>Sample Faculty Profiles &ndash; Demonstration Data</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Department Faculty Cards Grid (Filtered from data/faculty.json) -->
+        <div id="faculty-cards-computer-engineering" class="faculty-profiles-grid">
+          <p class="fetch-loading-message">Loading Computer Engineering faculty profiles&#8230;</p>
+        </div>
+
+        <div class="detail-view-actions">
+          <a href="#faculty" class="btn btn-secondary">&larr; Back to Faculty Directory</a>
+          <a href="#departments/computer-engineering" class="btn btn-primary">Explore Department Program</a>
+          <a href="#enquiry" class="btn btn-secondary">Student Guidance Enquiry</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         PAGE VIEW 5B: INFORMATION TECHNOLOGY FACULTY (#faculty/information-technology)
+         ====================================================================== -->
+    <section class="section faculty-detail-view page-view" id="view-faculty-information-technology">
+      <div class="container">
+        <div class="detail-view-breadcrumb">
+          <a href="#faculty" class="detail-back-link">&larr; Back to Faculty Directory</a>
+        </div>
+
+        <div class="detail-view-hero">
+          <span class="section-badge">Department Faculty</span>
+          <h2 class="section-title">Information Technology &mdash; Faculty Directory</h2>
+          <p class="section-subtitle">
+            Department faculty members, teaching qualifications, professional experience, and academic specializations.
+          </p>
+          <div class="faculty-demo-disclaimer" role="note">
+            <span class="disclaimer-badge">Demonstration Data</span>
+            <span>Sample Faculty Profiles &ndash; Demonstration Data</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Department Faculty Cards Grid (Filtered from data/faculty.json) -->
+        <div id="faculty-cards-information-technology" class="faculty-profiles-grid">
+          <p class="fetch-loading-message">Loading Information Technology faculty profiles&#8230;</p>
+        </div>
+
+        <div class="detail-view-actions">
+          <a href="#faculty" class="btn btn-secondary">&larr; Back to Faculty Directory</a>
+          <a href="#departments/information-technology" class="btn btn-primary">Explore Department Program</a>
+          <a href="#enquiry" class="btn btn-secondary">Student Guidance Enquiry</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         PAGE VIEW 5C: ARTIFICIAL INTELLIGENCE & DATA SCIENCE FACULTY (#faculty/ai-and-ds)
+         ====================================================================== -->
+    <section class="section faculty-detail-view page-view" id="view-faculty-ai-and-ds">
+      <div class="container">
+        <div class="detail-view-breadcrumb">
+          <a href="#faculty" class="detail-back-link">&larr; Back to Faculty Directory</a>
+        </div>
+
+        <div class="detail-view-hero">
+          <span class="section-badge">Department Faculty</span>
+          <h2 class="section-title">AI &amp; Data Science &mdash; Faculty Directory</h2>
+          <p class="section-subtitle">
+            Department faculty members, teaching qualifications, professional experience, and academic specializations.
+          </p>
+          <div class="faculty-demo-disclaimer" role="note">
+            <span class="disclaimer-badge">Demonstration Data</span>
+            <span>Sample Faculty Profiles &ndash; Demonstration Data</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Department Faculty Cards Grid (Filtered from data/faculty.json) -->
+        <div id="faculty-cards-ai-and-ds" class="faculty-profiles-grid">
+          <p class="fetch-loading-message">Loading AI &amp; Data Science faculty profiles&#8230;</p>
+        </div>
+
+        <div class="detail-view-actions">
+          <a href="#faculty" class="btn btn-secondary">&larr; Back to Faculty Directory</a>
+          <a href="#departments/ai-and-ds" class="btn btn-primary">Explore Department Program</a>
+          <a href="#enquiry" class="btn btn-secondary">Student Guidance Enquiry</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         PAGE VIEW 5D: ELECTRONICS & TELECOMMUNICATION FACULTY (#faculty/entc)
+         ====================================================================== -->
+    <section class="section faculty-detail-view page-view" id="view-faculty-entc">
+      <div class="container">
+        <div class="detail-view-breadcrumb">
+          <a href="#faculty" class="detail-back-link">&larr; Back to Faculty Directory</a>
+        </div>
+
+        <div class="detail-view-hero">
+          <span class="section-badge">Department Faculty</span>
+          <h2 class="section-title">Electronics &amp; Telecom &mdash; Faculty Directory</h2>
+          <p class="section-subtitle">
+            Department faculty members, teaching qualifications, professional experience, and academic specializations.
+          </p>
+          <div class="faculty-demo-disclaimer" role="note">
+            <span class="disclaimer-badge">Demonstration Data</span>
+            <span>Sample Faculty Profiles &ndash; Demonstration Data</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Department Faculty Cards Grid (Filtered from data/faculty.json) -->
+        <div id="faculty-cards-entc" class="faculty-profiles-grid">
+          <p class="fetch-loading-message">Loading Electronics &amp; Telecom faculty profiles&#8230;</p>
+        </div>
+
+        <div class="detail-view-actions">
+          <a href="#faculty" class="btn btn-secondary">&larr; Back to Faculty Directory</a>
+          <a href="#departments/entc" class="btn btn-primary">Explore Department Program</a>
+          <a href="#enquiry" class="btn btn-secondary">Student Guidance Enquiry</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PAGE VIEW 6: NOTICES & ANNOUNCEMENTS (#notices)
+         ====================================================================== -->
+    <section class="section notices-section page-view" id="notices">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Notice Board</span>
+          <h2 class="section-title">Notices &amp; Announcements</h2>
+          <p class="section-subtitle">
+            Stay updated with academic circulars, university examination schedules, technical events, and general campus
+            notices.
+          </p>
+        </div>
+
+        <!-- Notice Board Cards Grid — populated from data/notices.json -->
+        <div id="notices-board-grid" class="notices-board-grid">
+          <!-- Loading placeholder shown while fetch() retrieves notices.json -->
+          <p class="fetch-loading-message">Loading notices&#8230;</p>
+        </div>
+
+        <!-- View All Notices Visual Element -->
+        <div class="notices-action-container">
+          <a href="#notices" class="btn btn-secondary">View All Notices</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PAGE VIEW 7: ADMISSIONS (#admissions)
+         ====================================================================== -->
+    <section class="section admissions-section page-view" id="admissions">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Join DYPCOE</span>
+          <h2 class="section-title">Admissions</h2>
+          <p class="section-subtitle">
+            Welcome prospective engineering students. Begin your academic journey at D. Y. Patil College of Engineering,
+            Akurdi, Pune &mdash; shaping capable engineers through world-class technical education.
+          </p>
+        </div>
+
+        <!-- Official Information Advisory Note -->
+        <div class="admissions-notice-note">
+          <span class="admissions-note-icon">&#9432;</span>
+          <p>
+            <strong>Official Advisory:</strong> Engineering admissions are governed through the Centralized Admission
+            Process (CAP) conducted by the Directorate of Technical Education (DTE), Government of Maharashtra (College
+            DTE Code: <strong>6272</strong>). Please consult the official DTE/CET Cell Maharashtra portal and college
+            administration office for current admission cut-offs, fee schedules, and required certificates.
+          </p>
+        </div>
+
+        <!-- Admission Journey Subsection -->
+        <div class="admission-journey-wrapper">
+          <div class="journey-header">
+            <span class="journey-badge">Step-by-Step Guide</span>
+            <h3 class="journey-title">Your Admission Journey</h3>
+            <p class="journey-subtitle">
+              Follow these key steps to navigate through the engineering admission lifecycle.
+            </p>
+          </div>
+
+          <!-- 4-Step Process Grid (CSS Grid) -->
+          <div class="admission-steps-grid">
+            <!-- Step 1 -->
+            <article class="admission-step-card">
+              <div class="step-card-top">
+                <span class="step-number">01</span>
+                <div class="step-icon" aria-label="Step 1 icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </div>
+              </div>
+              <h4 class="step-title">Explore Programs</h4>
+              <p class="step-desc">
+                Review available engineering branches including Computer Engineering, IT, Artificial Intelligence &amp;
+                Data Science, and Electronics &amp; Telecommunication.
+              </p>
+            </article>
+
+            <!-- Step 2 -->
+            <article class="admission-step-card">
+              <div class="step-card-top">
+                <span class="step-number">02</span>
+                <div class="step-icon" aria-label="Step 2 icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <h4 class="step-title">Review Eligibility</h4>
+              <p class="step-desc">
+                Understand qualifying entrance examination criteria (MHT-CET / JEE Main) and academic requirements
+                stipulated by Savitribai Phule Pune University and DTE.
+              </p>
+            </article>
+
+            <!-- Step 3 -->
+            <article class="admission-step-card">
+              <div class="step-card-top">
+                <span class="step-number">03</span>
+                <div class="step-icon" aria-label="Step 3 icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                  </svg>
+                </div>
+              </div>
+              <h4 class="step-title">Submit Application</h4>
+              <p class="step-desc">
+                Register on the state CET Cell CAP portal, upload verified educational documents, and select DYPCOE
+                Akurdi (DTE Code: 6272) in option form preferences.
+              </p>
+            </article>
+
+            <!-- Step 4 -->
+            <article class="admission-step-card">
+              <div class="step-card-top">
+                <span class="step-number">04</span>
+                <div class="step-icon" aria-label="Step 4 icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <h4 class="step-title">Complete Admission</h4>
+              <p class="step-desc">
+                Upon seat allotment, report to the college campus facilitation center with original documents for
+                verification, fee deposition, and enrollment confirmation.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <!-- Prominent Call-to-Action Card -->
+        <div class="admissions-cta-banner">
+          <div class="cta-banner-content">
+            <h3 class="cta-banner-title">Have Questions About Admissions?</h3>
+            <p class="cta-banner-desc">
+              Connect with our admissions desk to learn more about departments, academic facilities, and admission
+              queries.
+            </p>
+          </div>
+          <a href="#enquiry" class="btn btn-primary cta-banner-btn">Enquire Now &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PAGE VIEW 8: STUDENT ENQUIRY (#enquiry)
+         ====================================================================== -->
+    <section class="section enquiry-section page-view" id="enquiry">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Get in Touch</span>
+          <h2 class="section-title">Student Enquiry</h2>
+          <p class="section-subtitle">
+            Have questions regarding academic programs, departments, or campus facilities? Submit your details below,
+            and our student guidance desk will assist you.
+          </p>
+        </div>
+
+        <!-- Enquiry Form Container Card -->
+        <div class="enquiry-card-wrapper">
+          <form id="enquiry-form" class="enquiry-form">
+            <!-- 2-Column Responsive Form Grid -->
+            <div class="form-grid">
+              <!-- Field 1: Full Name (Required) -->
+              <div class="form-group">
+                <label for="fullName" class="form-label">
+                  Full Name <span class="required-indicator">*</span>
+                </label>
+                <input type="text" id="fullName" name="fullName" class="form-control" placeholder="e.g., Rajesh Sharma"
+                  required minlength="3" autocomplete="name">
+                <small class="form-hint">Enter at least 3 characters</small>
+              </div>
+
+              <!-- Field 2: Email Address (Required) -->
+              <div class="form-group">
+                <label for="email" class="form-label">
+                  Email Address <span class="required-indicator">*</span>
+                </label>
+                <input type="email" id="email" name="email" class="form-control"
+                  placeholder="e.g., rajesh.sharma@example.com" required autocomplete="email">
+                <small class="form-hint">Must be a valid email format</small>
+              </div>
+
+              <!-- Field 3: Phone Number (Optional / Formatted) -->
+              <div class="form-group">
+                <label for="phone" class="form-label">
+                  Phone Number
+                </label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="e.g., 9876543210"
+                  pattern="[0-9]{10}" autocomplete="tel">
+                <small class="form-hint">Optional: 10-digit mobile number</small>
+              </div>
+
+              <!-- Field 4: Department of Interest (Required Select) -->
+              <div class="form-group">
+                <label for="department" class="form-label">
+                  Department of Interest <span class="required-indicator">*</span>
+                </label>
+                <select id="department" name="department" class="form-control" required>
+                  <option value="" disabled selected>-- Select Department --</option>
+                  <option value="Computer Engineering">Computer Engineering</option>
+                  <option value="Information Technology">Information Technology</option>
+                  <option value="Artificial Intelligence and Data Science">Artificial Intelligence and Data Science
+                  </option>
+                  <option value="Electronics and Telecommunication">Electronics and Telecommunication</option>
+                </select>
+                <small class="form-hint">Choose your preferred branch</small>
+              </div>
+
+              <!-- Field 5: Enquiry Message (Required Textarea - Full Width) -->
+              <div class="form-group form-group-full">
+                <label for="message" class="form-label">
+                  Enquiry Message <span class="required-indicator">*</span>
+                </label>
+                <textarea id="message" name="message" class="form-control form-textarea" rows="4"
+                  placeholder="Please describe your query regarding courses, syllabus, or admission guidance..."
+                  required minlength="10"></textarea>
+                <small class="form-hint">Minimum 10 characters required</small>
+              </div>
+            </div>
+
+            <!-- Submit Button & Form Message Status Area -->
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary form-submit-btn">
+                Submit Enquiry
+              </button>
+              <div id="form-message" class="form-message" role="alert" aria-live="polite"></div>
+            </div>
+
+            <!-- Student Demonstration Privacy Note -->
+            <div class="form-privacy-note">
+              <span class="privacy-icon">&#128274;</span>
+              <p>
+                <strong>Academic Demonstration Note:</strong> This form is created strictly as a student individual
+                mini-project for the Web Technology CCE-5 course. No personal information is transmitted or stored on
+                official college servers.
+              </p>
+            </div>
+          </form>
+        </div><!-- end enquiry-card-wrapper -->
+
+        <!-- ============================================================
+             Submitted Enquiries Panel (localStorage display)
+             Populated dynamically by js/script.js from localStorage.
+        ============================================================ -->
+        <div class="submitted-enquiries-wrapper" id="submitted-enquiries-wrapper">
+          <h3 class="submitted-enquiries-title">Submitted Enquiries</h3>
+          <p class="submitted-enquiries-note">
+            &#128274; Entries below are saved only in <strong>this browser</strong> using localStorage. No data is ever
+            sent to any server.
+          </p>
+          <!-- Enquiry cards are built and inserted here by JavaScript -->
+          <div id="enquiry-list" class="enquiry-list"></div>
+        </div>
+
+      </div><!-- end container -->
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       Site Footer
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <!-- Col 1: College Summary -->
+        <div>
+          <h4 class="footer-col-title">D. Y. Patil College of Engineering</h4>
+          <p class="footer-desc">
+            Established in 1984 under Dr. D. Y. Patil Pratishthan. Approved by AICTE, New Delhi, recognized by DTE
+            (Govt. of Maharashtra), and affiliated to Savitribai Phule Pune University. Accredited with 'A' Grade by
+            NAAC.
+          </p>
+          <span class="footer-badge-tag">DTE Code: 6272</span>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#departments">Departments</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#faculty">Faculty</a></li>
+            <li><a href="#notices">Notices</a></li>
+            <li><a href="#admissions">Admissions</a></li>
+            <li><a href="#enquiry">Enquiry</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Key Departments -->
+        <div>
+          <h4 class="footer-col-title">Departments</h4>
+          <ul class="footer-links">
+            <li><a href="#departments/computer-engineering">Computer Engineering</a></li>
+            <li><a href="#departments/information-technology">Information Technology</a></li>
+            <li><a href="#departments/ai-and-ds">Artificial Intelligence &amp; Data Science</a></li>
+            <li><a href="#departments/entc">Electronics &amp; Telecommunication</a></li>
+            <li><a href="#departments">All Departments Overview</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Campus Contact -->
+        <div>
+          <h4 class="footer-col-title">Campus Location</h4>
+          <div class="footer-contact-info">
+            <p>
+              <strong>D. Y. Patil Educational Complex</strong><br>
+              Sector 29, Nigdi Pradhikaran, Akurdi,<br>
+              Pune, Maharashtra, India &mdash; 411044
+            </p>
+            <p>
+              <strong>Email:</strong> principal@dypcoeakurdi.ac.in<br>
+              <strong>Phone:</strong> +91 020 27653058
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Legal / Student Credit -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <span>&copy; 2026 D. Y. Patil College of Engineering, Akurdi. All Rights Reserved.</span>
+        <span>Web Technology 1 Individual Mini Project &bull; Third Year AI &amp; Data Science (CCE-5)</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

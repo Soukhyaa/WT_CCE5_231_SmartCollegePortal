@@ -1,0 +1,118 @@
+/**
+ * variables.css - Design System Tokens
+ * Web Technology CCE-5: Smart College Website Portal
+ * D. Y. Patil College of Engineering, Akurdi, Pune
+ * Theme: Burgundy & Warm Ivory Palette
+ */
+
+:root {
+  /* ==========================================================================
+     Color Palette (Burgundy & Warm Ivory Selected Theme)
+     ========================================================================== */
+  /* Primary & Secondary Brand Colors */
+  --color-burgundy: #542B36;
+  --color-burgundy-dark: #3F1F28;
+  --color-burgundy-deep: #2E161D;
+  --color-muted-wine: #854D59;
+  --color-muted-wine-hover: #723E49;
+
+  /* Accent & Decorative Colors */
+  --color-antique-gold: #C69B62;
+  --color-antique-gold-hover: #B58A51;
+  --color-antique-gold-soft: #F9F3EA;
+  --color-dusty-rose: #D9BFAF;
+  --color-dusty-rose-soft: #F4ECE7;
+
+  /* Backgrounds & Neutrals */
+  --color-warm-ivory: #F7F3EF;
+  --color-warm-ivory-card: #FAF7F4;
+  --color-white: #FFFFFF;
+
+  /* Text & Border Colors */
+  --color-espresso-text: #383234;
+  --color-text-primary: #383234;       /* Primary Espresso Text */
+  --color-text-secondary: #5C5254;     /* Secondary Subtitle Text */
+  --color-text-muted: #756C6D;         /* Muted Text */
+  --color-text-light: #948A8B;         /* Light Meta Text */
+  --color-text-ivory: #F7F3EF;         /* Light Text on Dark Burgundy */
+
+  --color-border: #E8DEDA;             /* Light Border */
+  --color-border-subtle: #F0E8E5;
+  --color-border-burgundy: rgba(84, 43, 54, 0.18);
+
+  /* Status / Utility */
+  --color-success: #4A7A55;
+  --color-error: #9E3535;
+  --color-warning: #C69B62;
+
+  /* Compatibility Aliases (Ensures seamless rendering across styles) */
+  --color-baby-pink: #D9BFAF;
+  --color-baby-pink-soft: #F4ECE7;
+  --color-baby-pink-hover: #CDB09F;
+  --color-sage-green: #C69B62;
+  --color-sage-light: #F9F3EA;
+  --color-sage-hover: #B58A51;
+  --color-deep-sage: #542B36;
+  --color-deep-sage-dark: #3F1F28;
+  --color-deep-sage-muted: #854D59;
+  --color-warm-neutral: #F7F3EF;
+  --color-warm-neutral-card: #FFFFFF;
+  --color-warm-ivory-dark: #EDE6E0;
+  --color-burgundy-light: #854D59;
+  --color-text-main: #383234;
+
+  /* ==========================================================================
+     Typography
+     ========================================================================== */
+  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-heading: Georgia, "Times New Roman", Times, serif;
+
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-md: 1.125rem;   /* 18px */
+  --font-size-lg: 1.25rem;    /* 20px */
+  --font-size-xl: 1.5rem;     /* 24px */
+  --font-size-2xl: 2rem;      /* 32px */
+  --font-size-3xl: 2.5rem;    /* 40px */
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.25;
+  --line-height-base: 1.6;
+  --line-height-relaxed: 1.75;
+
+  /* ==========================================================================
+     Spacing & Layout
+     ========================================================================== */
+  --spacing-xs: 0.25rem;  /* 4px */
+  --spacing-sm: 0.5rem;   /* 8px */
+  --spacing-md: 1rem;     /* 16px */
+  --spacing-lg: 1.5rem;   /* 24px */
+  --spacing-xl: 2rem;     /* 32px */
+  --spacing-2xl: 3rem;    /* 48px */
+  --spacing-3xl: 4.5rem;  /* 72px */
+
+  --max-width-container: 1200px;
+  --header-height: 80px;
+  --topbar-height: 38px;
+
+  /* ==========================================================================
+     Borders, Shadows & Transitions
+     ========================================================================== */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-pill: 9999px;
+
+  --shadow-sm: 0 2px 8px rgba(56, 50, 52, 0.05);
+  --shadow-md: 0 4px 16px rgba(56, 50, 52, 0.08);
+  --shadow-lg: 0 10px 28px rgba(56, 50, 52, 0.12);
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-base: var(--transition-normal);
+}
