@@ -74,3 +74,20 @@ The faculty profiles and notices included in the project are demonstration data.
 **Subject:** Web Technology  
 **Assessment:** CCE 5  
 **Project:** Smart College Website Portal
+
+## Project Screenshots
+
+### Home Page
+![Home Page](screenshots/home.png)
+
+### Departments
+![Departments](screenshots/departments.png)
+
+### Courses
+![Courses](screenshots/courses.png)
+
+### Expanded Course Details
+![Course Details](screenshots/course-details.png)
+
+### Faculty Directory
+![Faculty Directory](screenshots/faculty.png)
